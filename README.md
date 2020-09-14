@@ -1,4 +1,6 @@
-# dcp-config
+# Deadbolt App
+
+https://deadbolt.codemuffin.com
 
 ## Project setup
 ```
