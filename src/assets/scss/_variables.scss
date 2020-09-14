@@ -1,0 +1,44 @@
+
+// Colours
+// ============================================================================
+
+// Game
+$color-r:  #CC6767; // Pastel Red (eg. unlocked weapons)
+$color-b:  #3B9BD0; // Pastel Blue (eg. weapon cost)
+$color-g:  #7eb686; // Pastel Green (only used for stairs)
+$color-y:  #efd27b; // Pastel Yellow (general "USE x")
+$color-or: #F6742D; // Pastel Orange (looks unused)
+$color-p:  #E962CF; // Pink (unused?)
+$color-w:  #fff;
+$color-lt: #c0c0c0;
+$color-gr: #BDBEC2;
+$color-dk: #404040;
+$color-bl: #000;
+
+// Custom
+$color-purple:  #cd7bef;
+$color-teal:    #4DB6AC;
+$color-lorange: #fba70d; // light orange, game orange is too harsh
+
+// Blood
+$color-blood-red-base:      darkred;
+$color-blood-red-outline:   red;
+$color-blood-grey-base:     darkgrey;
+$color-blood-grey-outline:  grey;
+$color-blood-black-base:    black;
+$color-blood-black-outline: darkgrey;
+
+
+// Fonts
+// ============================================================================
+
+$font-serif: 'Windows Command Prompt', 'Courier New', Courier, monospace;
+$font-sans: NBP-Informa-FiveSix, 'Courier New', Courier, monospace;
+
+
+// Dimensions
+// ============================================================================
+
+$content-width: 800px;
+$sidebar-width: 200px;
+$sidebar-autohide-breakpoint: 1330px - 1;

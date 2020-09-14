@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Windows Command Prompt';
+    src: url('Windows-Command-Prompt.eot');
+    src: local('Windows Command Prompt Regular'), local('Windows-Command-Prompt'),
+        url('Windows-Command-Prompt.eot?#iefix') format('embedded-opentype'),
+        url('Windows-Command-Prompt.woff2') format('woff2'),
+        url('Windows-Command-Prompt.woff') format('woff'),
+        url('Windows-Command-Prompt.ttf') format('truetype'),
+        url('Windows-Command-Prompt.svg#Windows-Command-Prompt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,63 @@
+
+// Config
+// ============================================================================
+
+// General
+$scrollbar-width:          15px;
+$scrollbar-height:         15px;
+
+// Button: The capstone at the top and bottom
+$scrollbar-button-display: none; // (block|none)
+$scrollbar-button:         #aaa;
+$scrollbar-button-hover:   darken($scrollbar-button, 5);
+$scrollbar-button-height:  10px;
+
+// Track: The "rail" that holds the thumb
+$scrollbar-track:          #26292a;
+$scrollbar-track-hover:    $scrollbar-track;
+
+// Thumb: The part you click on to drag
+$scrollbar-thumb:          #5a5a5a;
+$scrollbar-thumb-hover:    darken($scrollbar-thumb, 10);
+
+// Corner: Shown when there are both vertical and horizontal scrollbars
+$scrollbar-corner:         #efefef;
+
+
+// Main
+// ============================================================================
+
+::-webkit-scrollbar {
+	height: $scrollbar-height;
+	width: $scrollbar-width;
+}
+
+::-webkit-scrollbar-button {
+	background: $scrollbar-button;
+	display: $scrollbar-button-display;
+	height: $scrollbar-button-height;
+}
+
+::-webkit-scrollbar-button:hover {
+	background: $scrollbar-button-hover;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $scrollbar-thumb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: $scrollbar-thumb-hover;
+}
+
+::-webkit-scrollbar-track {
+	background: $scrollbar-track;
+}
+
+::-webkit-scrollbar-track:hover {
+	background: $scrollbar-track-hover;
+}
+
+::-webkit-scrollbar-corner {
+	background: $scrollbar-corner;
+}

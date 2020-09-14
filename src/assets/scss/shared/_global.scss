@@ -1,0 +1,48 @@
+html {
+	font-size: 14px;
+
+	@media (max-width: 768px) {
+		font-size: 13px;
+	}
+}
+
+body {
+	min-width: 320px;
+	background-color: #151718;
+	color: #e8e6e3;
+	line-height: 1.2;
+}
+
+::selection {
+	background-color: #633e63;
+	color: white;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 1.8rem;
+}
+
+h2 {
+	font-size: 1.4rem;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+blockquote {
+	border-left: 4px solid #292929;
+	font-size: 0.9em;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-top: 5px;
+	margin-bottom: 20px;
+
+	p {
+		margin-bottom: 10px;
+	}
+}

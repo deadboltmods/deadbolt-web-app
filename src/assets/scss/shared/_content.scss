@@ -1,0 +1,125 @@
+// container class for the <main> el
+main {
+	font-family: $font-sans;
+	font-size: 1.4rem;
+	line-height: 1.2;
+	// padding: 0 20px;
+
+	ul {
+		margin-bottom: 15px;
+	}
+
+	li {
+		// font-size: 1.3rem;
+		line-height: 1.1;
+		list-style: square;
+		margin-left: 20px;
+		padding-left: 5px;
+		margin-bottom: 3px;
+
+		// fix for markdown parser
+		> p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// page sections, divided by centered titles
+.content-section {
+	// margin-bottom: 80px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:nth-of-type(even) {
+		background-color: #0D0E0F;
+	}
+}
+
+$fullwidth-indent: $sidebar-width + 40px;
+
+.content-section-inner {
+	max-width: $content-width;
+	margin: 0 auto;
+
+	&--fullwidth {
+		max-width: $content-width;
+		margin-left: $fullwidth-indent;
+		margin-right: 40px;
+		max-width: none;
+
+		@media (min-width: #{$sidebar-autohide-breakpoint + 1}) {
+			// adjust title, otherwise it's pushed too far right
+			.centered-content {
+				position: relative;
+				left: -($fullwidth-indent / 2);
+			}
+		}
+
+		@media (max-width: $sidebar-autohide-breakpoint) {
+			max-width: calc(100% - 40px);
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: #{$content-width + 40}) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.styled-content {
+	font-family: $font-sans;
+
+	img {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto 20px;
+	}
+
+	a {
+		color: $color-b;
+
+		&:hover {
+			color: $color-lorange;
+		}
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	h2 {
+		color: $color-y;
+		font-family: $font-serif;
+		font-size: 1.8rem;
+		margin-bottom: 10px;
+	}
+
+	h3 {
+		color: $color-y;
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+
+	h4 {
+		color: $color-b;
+		font-size: 1.3rem;
+		margin-bottom: 10px;
+	}
+
+	* + h2 {
+		margin-top: 40px;
+	}
+
+	* + h3 {
+		margin-top: 30px;
+	}
+
+	* + h4 {
+		margin-top: 20px;
+	}
+}

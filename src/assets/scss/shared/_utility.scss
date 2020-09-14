@@ -1,0 +1,40 @@
+
+//Fonts
+.font-serif { font-family: $font-serif; }
+.font-sans  { font-family: $font-sans; }
+
+// Colours
+.color-r  { color: $color-r; }
+.color-b  { color: $color-b; }
+.color-g  { color: $color-g; }
+.color-y  { color: $color-y; }
+.color-or { color: $color-or; }
+.color-p  { color: $color-p; }
+.color-w  { color: $color-w; }
+.color-lt { color: $color-lt; }
+.color-gr { color: $color-gr; }
+.color-dk { color: $color-dk; }
+.color-bl { color: $color-bl; }
+
+// Non-game colours
+.color-purple  { color: $color-purple; }
+.color-teal    { color: $color-teal; }
+.color-lorange { color: $color-lorange; }
+
+// Fix blurry pixels
+.pixelart {
+	image-rendering: pixelated;
+}
+
+// Flex
+.flex-container-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+// Margins
+.util-mb   { margin-bottom: 20px; }
+.util-mb-s { margin-bottom: 5px;  }
+.util-mb-m { margin-bottom: 10px; }
+.util-mb-l { margin-bottom: 40px; }
