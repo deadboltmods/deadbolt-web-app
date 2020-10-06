@@ -3,9 +3,7 @@
 		:sections="sections"
 		:groupKeys="groupKeys"
 		:settings="settings"
-		:widgets="widgets"
-		:useStyledContentClass="false"
-		:fullwidth="true" />
+		:widgets="widgets" />
 </template>
 
 <script>
@@ -35,28 +33,36 @@
 						anchor: 'intro',
 						component: CustomJsonContent,
 						groupKey: 'intro',
-						intro: null
+						intro: null,
+						fullwidth: true,
+						useStyledContentClass: false
 					},
 					{
 						name: 'Character',
 						anchor: 'character',
 						component: Character,
 						groupKey: 'options',
-						intro: 'Choose your character with <span class="color-g">LMB</span>.<br>Each has their own stats, weapon and capabilities.'
+						intro: 'Choose your character with <span class="color-g">LMB</span>.<br>Each has their own stats, weapon and capabilities.',
+						fullwidth: true,
+						useStyledContentClass: false
 					},
 					{
 						name: 'Weapons',
 						anchor: 'weapons',
 						component: Weapons,
 						groupKey: 'options',
-						intro: weaponsIntro
+						intro: weaponsIntro,
+						fullwidth: true,
+						useStyledContentClass: false
 					},
 					{
 						name: 'Output',
 						anchor: 'output',
 						component: Output,
 						groupKey: 'options',
-						intro: 'The final custom.json file contents.'
+						intro: 'The final custom.json file contents.',
+						fullwidth: true,
+						useStyledContentClass: false
 					},
 				],
 				groupKeys: {

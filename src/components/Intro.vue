@@ -11,10 +11,10 @@
 		data() {
 			return {
 				intros: {
-					// home:        {title: 'Deadbolt Mods', description: 'Home of DCP + DECP', },
+					home:        {title: 'Deadbolt Mods', description: 'Home of DCP + DECP', },
 					DCP:         {title: 'DCP',           description: 'Deadbolt Community Patch', },
 					DECP:        {title: 'DECP',          description: 'Deadbolt Editor Community Patch', },
-					// resources:   {title: 'Resources',     description: 'Resources for players and creators', }
+					resources:   {title: 'Resources',     description: 'Resources for players and creators', }
 				},
 			}
 		},

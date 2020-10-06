@@ -86,12 +86,9 @@
 		grid-template-columns: 1fr;
 		position: relative;
 
-		//@TODO: Use a var for this bps, it's max-width version is in other components
 		@media (min-width: 500px)  {
 			grid-template-columns: 2fr 1fr;
 		}
-
-
 	}
 
 	.characters-grid {

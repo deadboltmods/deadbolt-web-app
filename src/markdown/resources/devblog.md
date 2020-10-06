@@ -1,6 +1,6 @@
 Links to posts containing or referencing sprites, music, and general development.
 
-If you're looking for the art assets zip link, it's [here](https://www.dropbox.com/s/9of6fvcaebvbmch/DEADBOLT%20Art%20Assets.zip.zip?dl=0), and was referenced in [this post](https://hopoo.tumblr.com/post/152134593474/hey-hopoo-since-you-said-you-could-post-specific).
+If you're looking for the art assets zip Dropbox link, it's [here](https://www.dropbox.com/s/9of6fvcaebvbmch/DEADBOLT%20Art%20Assets.zip.zip?dl=0). It was referenced in [this post](https://hopoo.tumblr.com/post/152134593474/hey-hopoo-since-you-said-you-could-post-specific). A download mirror is also available [here](http://files.codemuffin.com/deadbolt/misc/DEADBOLT%20Art%20Assets.zip).
 
 - [Early character designs](https://hopoo.tumblr.com/post/94998446214/more-game-ideas-yay-for-not-sleeping-plot-is-that)
 - [Early level design & sprites](https://hopoo.tumblr.com/post/95718245464/weekend-project-for-fun-some-basic-stuff-in)
@@ -13,6 +13,8 @@ If you're looking for the art assets zip link, it's [here](https://www.dropbox.c
 - [Music preview](https://hopoo.tumblr.com/post/131167750172/im-still-alive-ft-a-preview-of-the-in-game-music)
 - [Diagetic music preview](https://hopoo.tumblr.com/post/131331819800/more-gameplay-today-i-added-a-system-to-make-the)
 - [Release post](https://hopoo.tumblr.com/post/141057125919/oh-so-i-forgot-to-post-on-here-so-yeah-deadbolt)
+- [Deadbolt comic?](https://hopoo.tumblr.com/post/142270442319/would-you-ever-consider-making-more-deadbolt)
 - [Scrapped ideas](https://hopoo.tumblr.com/post/151410803289/what-ideas-did-you-scrapped-while-being-on-the-way)
 - [Art assets ZIP](https://hopoo.tumblr.com/post/152134593474/hey-hopoo-since-you-said-you-could-post-specific)
 - [Ideas for a sequel](https://hopoo.tumblr.com/post/152430536339/been-looking-through-the-graphics-and-i-found)
+- [DEADBOLT Q&A](https://hopoo.tumblr.com/post/171900977909/deadbolt-qa)

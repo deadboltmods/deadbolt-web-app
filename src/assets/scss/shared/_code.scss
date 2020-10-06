@@ -1,31 +1,31 @@
-
-
 // Code stripes
 $pre-line-height: 25px;
 $pre-bg-1: #1d1d1d; // dark
 $pre-bg-2: #252525; // light
 
-pre {
-	background: repeating-linear-gradient(
-		$pre-bg-1,
-		$pre-bg-1 $pre-line-height,
-		$pre-bg-2 $pre-line-height,
-		$pre-bg-2 $pre-line-height * 2
-	);
-	margin-bottom: 15px;
-	line-height: $pre-line-height;
-	padding: $pre-line-height 0;
+.styled-content {
+	pre {
+		background: repeating-linear-gradient(
+			$pre-bg-1,
+			$pre-bg-1 $pre-line-height,
+			$pre-bg-2 $pre-line-height,
+			$pre-bg-2 $pre-line-height * 2
+		);
+		margin-bottom: 15px;
+		line-height: $pre-line-height;
+		padding: $pre-line-height 0;
+
+		code {
+			background-color: transparent;
+			line-height: $pre-line-height;
+		}
+	}
 
 	code {
-		background-color: transparent;
-		line-height: $pre-line-height;
+		background-color: $pre-bg-1;
+		color: #b7b7b7;
+		padding: 2px 2px;
+		white-space: pre-wrap;
+		word-break: break-word;
 	}
-}
-
-code {
-	background-color: $pre-bg-1;
-	color: #b7b7b7;
-	padding: 2px 2px;
-	white-space: pre-wrap;
-	word-break: break-word;
 }

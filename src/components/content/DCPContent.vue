@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<section class="util-mb-l">
-			<p>Deadbolt Community Patch (DCP) is a massive update to the codebase of <a target="_blank" href="https://store.steampowered.com/app/394970/DEADBOLT/">DEADBOLT</a>, a 2016 game by Hopoo, the developers behind Risk of Rain.</p>
+			<p>DCP is a massive update to the codebase of <a target="_blank" href="https://store.steampowered.com/app/394970/DEADBOLT/">DEADBOLT</a>, a 2016 game by Hopoo, the developers behind Risk of Rain.</p>
 			<p class="color-r">DCP is currently in alpha. Some features are WIP. Expect bugs.</p>
 		</section>
 
@@ -22,14 +22,14 @@
 		name: 'DCPContent',
 		data() {
 			return {
-				version: '1.6.0',
+				version: '2.2.0',
 				domainBase: 'https://files.codemuffin.com/deadbolt'
 			}
 		},
 		computed: {
 			downloadUrl()
 			{
-				return `${this.domainBase}/dcp/DCP_ALPHA_${this.version}.zip`;
+				return `${this.domainBase}/dcp/DCP-ALPHA-${this.version}.zip`;
 			},
 		}
 	}

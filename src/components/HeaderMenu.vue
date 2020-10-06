@@ -20,6 +20,8 @@
 				<span class="tab-btn" to="#">...</span>
 				<ul class="tab-submenu tab-submenu--align-right">
 					<li><router-link class="tab-btn color-y" to="/config/customjson">Level Config</router-link></li>
+					<li><router-link class="tab-btn" to="/guides">Guides</router-link></li>
+					<li><router-link class="tab-btn" to="/settings">Settings</router-link></li>
 					<li><router-link class="tab-btn" to="/resources">Resources</router-link></li>
 				</ul>
 			</li>

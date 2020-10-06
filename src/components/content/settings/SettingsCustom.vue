@@ -2,39 +2,18 @@
 	<div>
 		<p>Details of the options avialable in custom.json, the new config for custom levels.</p>
 
-		<table class=" table--responsive-labels">
-			<thead>
-				<tr>
-					<th v-for="column in columns" :key="column">{{ column }}</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr v-for="(row, rowKey) in rows" :key="rowKey">
-					<td :data-label="columns.col1">
-						<span v-if="row.modileHideCol1">
-							<span class="table-hide-small-bp">*</span>
-							<span class="table-hide-large-bp">{{ row.col1 }}</span>
-						</span>
-						<span v-else>{{ row.col1 }}</span>
-					</td>
-					<td :data-label="columns.col2">{{ row.col2 }}</td>
-					<td :data-label="columns.col3">
-						<span :class="valueClass( row.col3 )">
-							<span v-html="row.col3"></span>
-						</span>
-					</td>
-					<td :data-label="columns.col4">
-						<span v-html="row.col4"></span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<Table :rows="rows" :columns="columns"/>
 	</div>
 </template>
 
 <script>
+	import Table from '@/components/Table.vue'
+
 	export default {
-		name: 'LevelConfigSettingsTable',
+		name: 'SettingsCustom',
+		components: {
+			Table
+		},
 		data() {
 			return {
 				columns: {
@@ -214,26 +193,6 @@
 					},
 				],
 			}
-		},
-		//@TODO: Move to a table component?
-		methods: {
-			valueClass( val )
-			{
-				let cls = '';
-
-				switch( val )
-				{
-					case true:
-						cls = 'color-g';
-						break;
-
-					case false:
-						cls = 'color-r';
-						break;
-				}
-
-				return cls;
-			},
-		},
+		}
 	}
 </script>

@@ -1,12 +1,6 @@
 table {
 	margin-bottom: 20px;
 
-	thead {
-		tr {
-			// background-color: #111;
-		}
-	}
-
 	tbody {
 		tr {
 			&:nth-of-type(odd) {

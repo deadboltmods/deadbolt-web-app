@@ -1,10 +1,13 @@
 
-// Wideout: breaks out of max content width
+// Wideout
+// Breaks out of max content width
+// Used by tables and wide images
+
 $wideout-width: $content-width + 600px;
 $wideout-negative-indent: -(($wideout-width - $content-width) / 2) - 20; //*1
 $wideout-mediaq: $wideout-width + 20; // *2
 
-// *1 Not sure why this buffer (-20) is needed, but it fixes the otherwise slightly off-center alignment
+// *1 This buffer (-20) fixes the otherwise slightly off-center alignment
 // *2 Media query buffer ensures there's always a gap left+right
 
 @media (min-width: $wideout-mediaq) {

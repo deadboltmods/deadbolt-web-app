@@ -9,11 +9,17 @@
 	// HTML content
 	import DCPContent from '@/components/content/DCPContent'
 	// Markdown
-	import MDUsage from '@/markdown/guides/dcp-usage.md'
 	import MDFeatures from '@/markdown/dcp/dcp-features.md'
 	import MDChangelog1 from '@/markdown/dcp/dcp-changelog-1.md'
-	import MDChangelog2 from '@/markdown/dcp/dcp-changelog-2.md'
+	import MD200 from '@/markdown/dcp/changelog/dcp-changelog-2.0.0.md'
+	import MD201 from '@/markdown/dcp/changelog/dcp-changelog-2.0.1.md'
+	import MD210 from '@/markdown/dcp/changelog/dcp-changelog-2.1.0.md'
+	import MD220 from '@/markdown/dcp/changelog/dcp-changelog-2.2.0.md'
 
+	import MDSetupCustomLevels from '@/markdown/dcp/setup/dcp-setup-custom-levels.md'
+	import MDSetupCustomSprites from '@/markdown/dcp/setup/dcp-setup-custom-sprites.md'
+	import MDSetupInstall from '@/markdown/dcp/setup/dcp-setup-install.md'
+	import MDSetupSaving from '@/markdown/dcp/setup/dcp-setup-saving.md'
 
 	export default {
 		name: 'About',
@@ -28,7 +34,7 @@
 						anchor: 'dcp',
 						component: DCPContent,
 						groupKey: 'intro',
-
+						intro: 'Deadbolt Community Patch'
 					},
 					{
 						name: 'Features',
@@ -36,18 +42,66 @@
 						component: MDFeatures,
 						groupKey: 'intro'
 					},
+
+					// Setup
 					{
 						name: 'Setup',
-						anchor: 'setup',
-						component: MDUsage,
-						groupKey: 'intro'
+						hideFromSidebar: true,
+						specialHeading: true,
+					},
+					{
+						name: 'Install',
+						anchor: 'install',
+						component: MDSetupInstall,
+						groupKey: 'setup'
+					},
+					{
+						name: 'Saving',
+						anchor: 'saving',
+						component: MDSetupSaving,
+						groupKey: 'setup'
+					},
+					{
+						name: 'Levels',
+						anchor: 'customlevels',
+						component: MDSetupCustomLevels,
+						groupKey: 'setup'
+					},
+					{
+						name: 'Sprites',
+						anchor: 'customsprites',
+						component: MDSetupCustomSprites,
+						groupKey: 'setup'
 					},
 
 					// Changelog
 					{
-						name: '2.0.0+',
-						anchor: 'version2plus',
-						component: MDChangelog2,
+						name: 'Changelog',
+						hideFromSidebar: true,
+						specialHeading: true,
+					},
+					{
+						name: '2.2.0',
+						anchor: 'v220',
+						component: MD220,
+						groupKey: 'changelog',
+					},
+					{
+						name: '2.1.0',
+						anchor: 'v210',
+						component: MD210,
+						groupKey: 'changelog',
+					},
+					{
+						name: '2.0.1',
+						anchor: 'v201',
+						component: MD201,
+						groupKey: 'changelog',
+					},
+					{
+						name: '2.0.0',
+						anchor: 'v200',
+						component: MD200,
 						groupKey: 'changelog',
 					},
 					{
@@ -60,7 +114,8 @@
 				groupKeys: {
 					intro: 'Intro',
 					settings: 'Setting Tables',
-					changelog: 'Changelog'
+					changelog: 'Changelog',
+					setup: 'Setup'
 				},
 			}
 		}

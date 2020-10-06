@@ -46,14 +46,15 @@
 					:key="sectionIndex"
 					:id="section.anchor"
 					:data-anchor-observed="section.anchor"
-					class="content-section">
+					class="content-section"
+					:class="{ 'content-section--special-heading' : section.specialHeading }">
 
-					<article class="content-section-inner" :class="{ 'content-section-inner--fullwidth' : fullwidth }">
-						<h2 class="content-section-title font-serif color-y centered-content">{{ section.name }}</h2>
+					<article class="content-section-inner" :class="{ 'content-section-inner--fullwidth' : section.fullwidth }">
+						<h2 class="content-section-title centered-content">{{ section.name }}</h2>
 						<div class="intro centered-content" v-if="section.intro">
 							<span v-html="section.intro"></span>
 						</div>
-						<component :is="section.component" :class="{ 'styled-content' : useStyledContentClass }"/>
+						<component :is="section.component" :class="{ 'styled-content' : section.useStyledContentClass !== false }"/>
 					</article>
 				</section>
 			<!-- </div> -->
@@ -94,17 +95,6 @@
 				type: Object,
 				required: false,
 			},
-			fullwidth: {
-				type: Boolean,
-				required: false,
-				default: false,
-			},
-			// Applies the 'styled-content' class
-			useStyledContentClass: {
-				type: Boolean,
-				required: false,
-				default: true,
-			},
 			widgets: {
 				type: Array,
 				required: false
@@ -125,6 +115,11 @@
 
 				this.sections.forEach( item =>
 				{
+					if ( item.hideFromSidebar )
+					{
+						return;
+					}
+
 					// Add group key to groups
 					if ( !groups?.[item.groupKey] )
 					{
@@ -193,6 +188,74 @@
 
 <style lang="scss" scoped>
 	@import '@/assets/scss/_variables.scss';
+
+	// Content
+	// ============================================================================
+
+	// page sections, divided by centered titles
+	.content-section {
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		&:nth-of-type(even) {
+			background-color: #0D0E0F;
+		}
+
+		&--special-heading {
+			padding-bottom: 40px;
+			padding-top: 40px;
+		}
+	}
+
+	.content-section-title {
+		color: $color-y;
+		font-family: $font-serif;
+		font-size: 2.5rem;
+		margin-bottom: 20px;
+		text-align: center;
+
+		.content-section--special-heading & {
+			// color: $color-b;
+			color: #adadad;
+			margin-bottom: 0;
+		}
+	}
+
+	$fullwidth-indent: $sidebar-width + 40px;
+
+	.content-section-inner {
+		max-width: $content-width;
+		margin: 0 auto;
+
+		&--fullwidth {
+			max-width: $content-width;
+			margin-left: $fullwidth-indent;
+			margin-right: 40px;
+			max-width: none;
+
+			@media (min-width: #{$sidebar-autohide-breakpoint + 1}) {
+				// adjust title, otherwise it's pushed too far right
+				.centered-content {
+					position: relative;
+					left: -($fullwidth-indent / 2);
+				}
+			}
+
+			@media (max-width: $sidebar-autohide-breakpoint) {
+				max-width: calc(100% - 40px);
+				margin: 0 auto;
+			}
+		}
+
+		@media (max-width: #{$content-width + 40}) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+
+	// Sidebar
+	// ============================================================================
 
 	.sidebar-link {
 		&.is-active {

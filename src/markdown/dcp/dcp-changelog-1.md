@@ -39,11 +39,6 @@
 - Added instructions.txt to the ZIP
 - Removed lots of unnecessary files as they're now available online
 
-Headshot line-of-sight indicator:
-
-![](@/assets/images/screenshots/1.6/headshot-hover.gif)
-
-
 ### Fixes
 
 - Charon is now technically usable. He has placeholder movement + aim sprites (both his idle sprites), so he can move and shoot. He works best with Severed Lich Arm
@@ -106,7 +101,10 @@ Saving is now possible. Saves are both made and loaded from a new location Deadb
 
 ## 1.0.0
 
-- Initial release
-- Includes walk sprites by Nintee
+Initial release. Includes a toon of features, including:
 
 ![](@/assets/images/screenshots/1.6/walk-stealth.gif)
+<div class="md-image-caption">Walk sprites by Nintee</div>
+
+![](@/assets/images/screenshots/features/debug-overlay.png)
+<div class="md-image-caption">Debug mode for custom local levels</div>

@@ -1,19 +1,16 @@
 <template>
 	<div id="app" class="pixelart">
 		<Header/>
-		<Intro/>
 		<router-view/>
 	</div>
 </template>
 
 <script>
 import Header from '@/components/Header'
-import Intro from '@/components/Intro'
 
 export default {
 	components: {
 		Header,
-		Intro
 	},
 }
 </script>

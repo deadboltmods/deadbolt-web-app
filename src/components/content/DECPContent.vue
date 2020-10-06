@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<section class="util-mb-l">
-			<p>Deadbolt Editor Community Patch (DCP) is an updated version of the Deadbolt level editor, with fixes and new features. Feature details are in the changelog.</p>
+			<p>DECP is an updated version of the Deadbolt level editor, with fixes and new features. Feature details are in the changelog.</p>
 		</section>
 
 		<section class="flex-container-center util-mb-l">

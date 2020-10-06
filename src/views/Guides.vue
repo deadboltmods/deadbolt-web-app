@@ -21,6 +21,11 @@
 			return {
 				sections: [
 					{
+						name: 'Workshop Guides',
+						hideFromSidebar: true,
+						specialHeading: true,
+					},
+					{
 						name: 'Play',
 						anchor: 'workshop-play',
 						component: MDWorkshopPlay,
@@ -33,10 +38,20 @@
 						groupKey: 'workshop'
 					},
 					{
+						name: 'Weapons Guides',
+						hideFromSidebar: true,
+						specialHeading: true,
+					},
+					{
 						name: 'Weapons',
 						anchor: 'weapons',
 						component: MDWeapons,
 						groupKey: 'weapons'
+					},
+					{
+						name: 'Misc Guides',
+						hideFromSidebar: true,
+						specialHeading: true,
 					},
 					{
 						name: 'Debug Log',

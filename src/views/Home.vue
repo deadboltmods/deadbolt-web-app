@@ -1,28 +1,28 @@
 <template>
 	<div class="home">
 		<div class="logo-container">
-			<div class="skull-glow" :class="{ 'active' : skullIsActive }" :style="{ 'color': skullGlowColor }"></div>
-			<img alt="Vue logo" class="logo" src="@/assets/logo-428.png">
+			<div class="skull-glow"></div>
+			<img alt="Deadbolt skull" class="logo" src="@/assets/logo-428.png">
 		</div>
 
 		<section class="split-content styled-content">
-			<div class="split-col" @mouseover="skullGlow('dcp')" @mouseleave="skullUnglow">
+			<div class="split-col">
 				<h2>
 					<span class="color-purple">
 						<router-link class="link" to="/dcp">DCP</router-link>
 					</span>
 				</h2>
 				<p>Deadbolt Community Patch</p>
-				<p>Custom campaigns, custom sprites, playable NPCs, new weapons, controller support, new level options, debug mode, walking, rolling, teleporting...</p>
+				<p>Playable NPCs, new weapons, moddable sprites, controller support, UI updates, debug mode, walking, rolling, teleporting...</p>
 			</div>
-			<div class="split-col" @mouseover="skullGlow('decp')" @mouseleave="skullUnglow">
+			<div class="split-col">
 				<h2>
 					<span class="color-teal">
 						<router-link class="link" to="/decp">DECP</router-link>
 					</span>
 				</h2>
 				<p>Deadbolt Editor Community Patch</p>
-				<p>Support for every game object, <br>more submenu options, door validation feedback, hovertext, zooming, "open with" support, tons of fixes.</p>
+				<p>Support for every game object, crash prevention, improved UI, zooming, "open with" support, standalone option...</p>
 			</div>
 		</section>
 	</div>
@@ -31,46 +31,13 @@
 <script>
 	export default {
 		name: 'Home',
-		data() {
-			return {
-				skullIsActive: false,
-				skullGlowColor: '#1ec4f6',
-			}
-		},
-		methods: {
-			// easter egg for Discord users
-			skullGlow( link )
-			{
-				let glowColor;
-
-				switch( link )
-				{
-					case 'dcp':
-						glowColor = '#cd7bef';
-						break;
-
-					case 'decp':
-						glowColor = '#4db6ac';
-						break;
-
-					default:
-						glowColor = '#1ec4f6'; // chat blue
-				}
-
-				this.skullGlowColor = glowColor;
-				this.skullIsActive = true;
-			},
-			skullUnglow()
-			{
-				this.skullIsActive = false;
-			}
-		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.home {
 		text-align: center;
+		padding-top: 60px;
 	}
 
 	.logo-container {
@@ -100,18 +67,32 @@
 		grid-column-gap: 80px;
 		max-width: 700px;
 		margin: 0 auto;
+
+		@media (max-width: 760px) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 0 20px;
+
+			.split-col {
+				flex-basis: 400px;
+				margin-bottom: 40px;
+			}
+		}
 	}
 
+	// Discord easter egg
 	.skull-glow {
-		// color: #1EC4F6;
+		color: #1EC4F6;
 		position: relative;
 		opacity: 0;
-		transition: opacity .5s;
-
-		&.active {
-			opacity: 1;
-			transition: opacity 10s;
-		}
+		animation-delay: 60s;
+		animation-duration: 5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-name: skull-glow;
+		animation-timing-function: linear;
 
 		&:before,
 		&:after {
@@ -131,6 +112,16 @@
 
 		&:after {
 			right: 34px;
+		}
+	}
+
+	@keyframes skull-glow {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
 		}
 	}
 </style>

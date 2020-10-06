@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
-		//@TODO: Split into modules
 		current: {
 			characterId: 'P',
 			primaryWeapon: 0,

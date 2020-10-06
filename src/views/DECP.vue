@@ -24,12 +24,20 @@
 						anchor: 'DECPContent',
 						component: DECPContent,
 						groupKey: 'main',
+						intro: 'Deadbolt Editor Community Patch'
 					},
 					{
 						name: 'Installation',
 						anchor: 'MDInstall',
 						component: MDInstall,
 						groupKey: 'main',
+					},
+
+					// Changelog
+					{
+						name: 'Changelog',
+						hideFromSidebar: true,
+						specialHeading: true,
 					},
 					{
 						name: '3.0.0',

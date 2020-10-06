@@ -12,6 +12,7 @@
 	import MDCutContent from '@/markdown/resources/cut-content.md'
 	// import MDEarlyDev from '@/markdown/resources/earlydev.md'
 	import Colors from '@/components/resources/Colors'
+	import DrawCtext from '@/components/resources/DrawCtext'
 
 	export default {
 		name: 'Resources',
@@ -51,6 +52,13 @@
 					// 	component: MDEarlyDev,
 					// 	groupKey: 'dev'
 					// },
+					{
+						name: 'draw_ctext',
+						anchor: 'drawctext',
+						component: DrawCtext,
+						groupKey: 'misc',
+						useStyledContentClass: false
+					},
 					{
 						name: 'Color Palette',
 						anchor: 'colors',
