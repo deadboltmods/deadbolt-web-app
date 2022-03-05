@@ -237,7 +237,7 @@
 				// adjust title, otherwise it's pushed too far right
 				.centered-content {
 					position: relative;
-					left: -($fullwidth-indent / 2);
+					left: -(($fullwidth-indent / 2) - 20px);
 				}
 			}
 
