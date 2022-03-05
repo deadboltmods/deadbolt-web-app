@@ -12,8 +12,8 @@
 						<router-link class="link" to="/dcp">DCP</router-link>
 					</span>
 				</h2>
-				<p>Deadbolt Community Patch</p>
-				<p>Playable NPCs, new weapons, moddable sprites, controller support, UI updates, debug mode, walking, rolling, teleporting...</p>
+				<p class="color-purple">Deadbolt Community Patch</p>
+				<p>New weapons, new objects, playable NPCs, UI updates, moddable sprites, debug mode, walking, rolling, teleporting...</p>
 			</div>
 			<div class="split-col">
 				<h2>
@@ -21,8 +21,8 @@
 						<router-link class="link" to="/decp">DECP</router-link>
 					</span>
 				</h2>
-				<p>Deadbolt Editor Community Patch</p>
-				<p>Support for every game object, crash prevention, improved UI, zooming, "open with" support, standalone option...</p>
+				<p class="color-teal">Deadbolt Editor Community Patch</p>
+				<p>Support for every game object, multi-select, zooming, "open with" support, crash prevention, offline option...</p>
 			</div>
 		</section>
 	</div>
