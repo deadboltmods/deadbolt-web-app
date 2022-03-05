@@ -13,7 +13,7 @@ They were released on Discord by their build numbers, which were: 64, 63, 62, 58
     - [This spreadsheet](https://docs.google.com/spreadsheets/d/1qRyF3laHK2bKYyI552aA5PElzib8ak1FfLNxDId9Lzg/edit#gid=305275394) lists every sprite in the game
     - Any value greater than `31` will show as a yellow number in the hovertext
     - The editor and the base game have **different sprite** indexes. This means, what is shown in the editor **will not** match the game (the spreadsheet is the SSOT)
-    - The editor sprite index only goes up to `383`, any above this use a new custom sprite. The hovertext will show the
+    - The editor sprite index only goes up to `383`, any above this use a new custom sprite. The hovertext will still show the correct speite index.
     - The frames the game uses depend on the xyscale of the wallpaper object. Set a wallpaper object to use sprite index `383` to see how this works.
 
 - Mines show a red semi-circle if they are set to "armed" (like in the game)
@@ -46,7 +46,7 @@ They were released on Discord by their build numbers, which were: 64, 63, 62, 58
 ### Window
 
 - Window caption shows mission name + filename, if set
-- Loading a file now updates the window caption as each load action (eg. read file, create object instance) is performed by the editor
+- Loading a file now updates the window caption as each load action (eg. read file, create object instance) is performed by the editor. This can be quite helpful in identifying objects that increase the load time of your level (eg. pipes seem to have a big slowdown effect)
 
 ### Object Submenus
 
