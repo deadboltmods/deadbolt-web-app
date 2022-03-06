@@ -1,0 +1,808 @@
+<template>
+	<div class="cols-wrap">
+
+		<!-- Calculator -->
+		<div class="col col--left">
+			<div class="calculator col-panel">
+				<div class="calc-row">
+					<label>Level</label>
+					<select v-model="userLevelIndex">
+						<template v-for="( levelData, levelIndex ) in allLevelStats">
+							<option :key="levelIndex" :value="levelIndex">
+								[{{ levelData.partimeMMSS }}] {{ levelData.chapter }}-{{ levelData.level }}: {{ levelData.name }}
+							</option>
+						</template>
+					</select>
+				</div>
+
+				<div class="calc-row">
+					<label>Time (mm:ss)</label>
+					<input type="number" placeholder="mins" min="0" v-model.number="userTimeMin" v-on:keyup.down="maybeUpdateSecs()">
+					<span class="time-sep">:</span>
+					<input type="number" placeholder="sec" max="59" min="0" v-model.number="userTimeSec" v-on:keyup.up="maybeUpdateMins()">
+					<!-- <span class="time-notes" data-time-notes></span> -->
+					<div class="autofill-time">
+						<button tabindex="-1" class="autofill-time__btn little-btn" @click="autofillTime()">FILL WITH PAR</button>
+					</div>
+				</div>
+
+				<div class="calc-row">
+					<label>Accuracy %</label>
+					<input type="number" placeholder="eg 60" min="0" max="100" v-model.number="userAccuracy">
+					<div class="plus-minus">
+						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userAccuracy = increaseUntilMax( userAccuracy, 10, 100 )">+10</button>
+						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userAccuracy = reduceUntilMin( userAccuracy, -10, 0 )">-10</button>
+					</div>
+					<!-- <div class="shooting-score-note" data-shooting-score-note></div> -->
+				</div>
+
+				<div class="calc-row">
+					<label>Headshot %</label>
+					<input type="number" placeholder="eg 25" min="0" max="100" v-model.number="userHeadshots">
+					<div class="plus-minus">
+						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userHeadshots = increaseUntilMax( userHeadshots, 10, 100 )">+10</button>
+						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userHeadshots = reduceUntilMin( userHeadshots, -10, 0 )">-10</button>
+					</div>
+					<!-- <div class="shooting-score-note" data-shooting-score-note></div> -->
+				</div>
+
+				<div class="calc-row calc-row--results">
+					<label>Results</label>
+					<div class="results-wrap">
+						<div class="stars">
+							<!-- Filled Stars (red, or gold if 5-star) -->
+							<span v-for="starNumber in getStarsCount()" :class="( getStarsCount() === 5 ) ? 'star--gold' : 'star--1'" class="star" :key="'starNumber' + starNumber">
+								<inline-svg :src="require('@/assets/svg/material-icons/mi-star-rate.svg')"/>
+							</span>
+
+							<!-- Empty stars -->
+							<span v-for="emptyStarNumber in getEmptyStarsCount()" class="star star--0" :key="'emptyStarNumber' + emptyStarNumber">
+								<inline-svg :src="require('@/assets/svg/material-icons/mi-star-rate.svg')"/>
+							</span>
+						</div>
+
+						<div class="results-wrap__reset-btn">
+							<button type="reset" class="calc-btn calc-btn--reset" @click="resetCalc()">Reset</button>
+						</div>
+					</div>
+				</div>
+
+			</div><!--/.calculator-->
+
+			<!-- Notes: Shooting -->
+			<div class="notes notes--demos col-panel">
+				<div class="note-heading">
+					Demos
+				</div>
+				<div class="note-row"><button class="little-btn" @click="setDemo1()">Demo 1: Test Decimals</button></div>
+				<div class="note-row"><button class="little-btn" @click="setDemo2()">Demo 2: Test Max Values</button></div>
+				<div class="note-row"><button class="little-btn" @click="setDemo3()">Demo 3: Set shooting% to 150</button></div>
+			</div>
+
+		</div><!--/.col--left-->
+
+
+		<!-- Data + Notes -->
+		<div class="col col--right">
+
+			<!-- Notes: Time -->
+			<div class="notes col-panel">
+				<div class="note-heading">
+					Time
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">Yours</div>
+					<div class="note-row__value">{{ getCurrentTimeInSec() }} sec</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">Par</div>
+					<div class="note-row__value">{{ getParTimeInSec() }} sec</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">Diff</div>
+					<div class="note-row__value">
+						<span :class="( getTimeDiff() <= 0 ) ? 'color-g' : 'color-r'">
+							{{ getTimeDiff() }} sec
+						</span>
+					</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">% <span class="color-dk">(par/yours)</span></div>
+					<div class="note-row__value">{{ roundDecimals( getTimePercent(), 10, true ) }} %</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">Score</div>
+					<div class="note-row__value">{{ roundDecimals( calculateTimeScore().score, 10, true ) }}</div>
+				</div>
+				<!--@todo:previouslyHad: ` && (getShootingPercent() !== 0)`-->
+				<div class="note-row note-row--warning" v-if="(getTimeDiff() < 0) && getCurrentTimeInSec() !== 0">
+					<!-- Max value warning for shooting -->
+					<span class="color-r">Note: Beating the par time won't increase your stars any further. The time score maxes out at 1.</span>
+				</div>
+			</div>
+
+			<!-- Notes: Shooting -->
+			<div class="notes col-panel">
+				<div class="note-heading">
+					Shooting
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">%</div>
+					<div class="note-row__value">{{ getShootingPercent() }} %  <span class="color-dk">({{ userAccuracy }} + {{ userHeadshots }})</span></div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">Score</div>
+					<div class="note-row__value">{{ calculateShootingScore().score }}</div>
+				</div>
+				<div class="note-row note-row--warning" v-if="getShootingPercent() > 150">
+					<!-- Max value warning for shooting -->
+					<span class="color-r">Note: Shooting score has a max of 1.5 (ie. 150% is the maximum counted total of accuracy% plus headshots%).</span>
+				</div>
+			</div>
+
+			<!-- Notes: Final Score -->
+			<div class="notes col-panel">
+				<div class="note-heading">
+					Final
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">Base</div>
+					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreBase, 10, true ) }}</div>
+				</div>
+
+				<div class="note-row">
+					<div class="note-row__label">Multi (* 5)</div>
+					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreMulti, 10, true ) }}</div>
+				</div>
+
+				<div class="note-row">
+					<div class="note-row__label">Multi Rounded</div>
+					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreRound, 10, true ) }}</div>
+				</div>
+
+				<div class="note-row">
+					<div class="note-row__label">Clamp</div>
+					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreClamp, 10, true ) }}</div>
+				</div>
+			</div>
+
+			<!-- Notes: Debug -->
+			<div class="notes col-panel" v-if="showDebugInfo">
+				<div class="note-row">
+					<div class="note-row__label">userLevelIndex</div>
+					<div class="note-row__value">{{ userLevelIndex }}</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">userTimeMin</div>
+					<div class="note-row__value">{{ userTimeMin }}</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">userTimeSec</div>
+					<div class="note-row__value">{{ userTimeSec }}</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">userAccuracy</div>
+					<div class="note-row__value">{{ userAccuracy }}</div>
+				</div>
+				<div class="note-row">
+					<div class="note-row__label">userHeadshots</div>
+					<div class="note-row__value">{{ userHeadshots }}</div>
+				</div>
+			</div>
+
+		</div><!--/.col--right-->
+
+	</div>
+
+</template>
+
+
+<script>
+	import allLevelStats from '@/data/allLevelStats'
+	import InlineSvg from 'vue-inline-svg'
+
+	export default {
+		name: 'Calculator',
+		components: {
+			'inline-svg': InlineSvg,
+		},
+		data() {
+			return {
+				// External
+				allLevelStats,
+
+				// Debug
+				showDebugInfo: false,
+
+				// User data (two-way binding)
+				userLevelIndex: 0,
+				userTimeMin: 0,
+				userTimeSec: 0,
+				userAccuracy: 0,
+				userHeadshots: 0,
+			}
+		},
+		methods: {
+
+			// User Interaction
+			// ------------------------------------------------------------------------
+
+			resetCalc()
+			{
+				this.userLevelIndex = 0;
+				this.userTimeMin    = 0;
+				this.userTimeSec    = 0;
+				this.userAccuracy   = 0;
+				this.userHeadshots  = 0;
+			},
+
+			setDemo1()
+			{
+				// Decimals
+				this.userLevelIndex = 0;
+				this.userTimeMin    = 2;
+				this.userTimeSec    = 39;
+				this.userAccuracy   = 10;
+				this.userHeadshots  = 0;
+			},
+
+			setDemo2()
+			{
+				// Max values
+				this.userLevelIndex = 0;
+				this.userTimeMin    = 1;
+				this.userTimeSec    = 33;
+				this.userAccuracy   = 100;
+				this.userHeadshots  = 51;
+			},
+
+			setDemo3()
+			{
+				this.userAccuracy   = 100;
+				this.userHeadshots  = 50;
+			},
+
+
+			/**
+			 * If user pressed DOWN while the mins input was focused.
+			 * Maybe carry this over to secs
+			 *
+			 * @todo: Probably remove this
+			 *
+			 * @return  {void}
+			 */
+			maybeUpdateSecs()
+			{
+				// console.log('KEY_EVENT_1', this.userTimeMin);
+
+				if ( this.userTimeMin === 0 && this.userTimeSec === 0 )
+				{
+					// this.userTimeSec = 59; // works well but needs UBER PLANNING to think it through, probably overkill
+				}
+			},
+
+			/**
+			 * User pressed UP while the secs input was focused.
+			 * Maybe carry this over to mins
+			 *
+			 * @todo: Probably remove this
+			 *
+			 * @return  {void}
+			 */
+			maybeUpdateMins()
+			{
+				// console.log('KEY_EVENT_2', this.userTimeSec);
+
+				if ( this.userTimeSec === 59 )
+				{
+					// this.userTimeMin++; terrible! Can only work if we check for secs = 60, but that's not a good idea
+				}
+			},
+
+
+
+			// Math and Stuff
+			// ------------------------------------------------------------------------
+
+			// Warning: `addTrailingDots` returns a string
+			roundDecimals( val, decimalPlaces = 10, addTrailingDots = false )
+			{
+				// 1 decimal place  = * 10   -- 10 to the power of 1
+				// 2 decimal places = * 100  -- 10 to the power of 2
+				// 3 decimal places = * 1000 -- 10 to the power of 3 (`tenPowered` being 1000 in this case)
+
+				const tenPowered = ( Math.pow( 10, decimalPlaces ) ); // "10 to the power of x", x being the exponent)
+
+				// via: https://stackoverflow.com/a/41716722 (with edits to allow any number of decimal places)
+				let rounded = Math.round( ( val + Number.EPSILON ) * tenPowered ) / tenPowered;
+
+				if ( addTrailingDots && ( val !== rounded ) )
+				{
+					rounded += '...';
+				}
+
+				return rounded;
+			},
+
+			/**
+			 * Increase a value, without going over the maximum
+			 *
+			 * @param   {int}  val     Value to increase
+			 * @param   {int}  amount  Amount to increase by
+			 * @param   {int}  max     Maximum allowed value
+			 *
+			 * @return  {int}          Increased value. If the value would have gone over the max, returns the max
+			 */
+			increaseUntilMax( val, amount, max )
+			{
+				let newVal = val + amount;
+
+				if ( newVal > max )
+				{
+					newVal = max;
+				}
+
+				return newVal;
+			},
+
+			/**
+			 * Reduce a value, without going below 0
+			 *
+			 * @param   {int}  val     Value to reduce
+			 * @param   {int}  amount  Amount to reduce
+			 * @param   {int}  min     Minimum allowed value
+			 *
+			 * @return  {int}          Reduced value. If the value would have gone below zero, returns zero
+			 */
+			reduceUntilMin( val, amount, min )
+			{
+				let newVal = val + amount;
+
+				if ( newVal < min )
+				{
+					newVal = min;
+				}
+
+				return newVal;
+			},
+
+			// Click button to auto fill time
+			autofillTime()
+			{
+				const MMSSObj = this.convertSecToMSObj( this.getCurrentLevelData().partimeSec );
+
+				this.userTimeMin = MMSSObj.minutes;
+				this.userTimeSec = MMSSObj.seconds;
+			},
+
+
+			// Get Data
+			// ------------------------------------------------------------------------
+
+			getCurrentLevelData()
+			{
+				return this.allLevelStats[this.userLevelIndex];
+			},
+
+			getShootingPercent()
+			{
+				return parseInt( this.userAccuracy ) + parseInt( this.userHeadshots );
+			},
+
+			getCurrentTimeInSec()
+			{
+				let timeTotalSec = 0;
+
+				if ( this.userTimeMin> 0 )
+				{
+					timeTotalSec = ( this.userTimeMin * 60 ) + this.userTimeSec;
+				}
+				else
+				{
+					timeTotalSec = this.userTimeSec;
+				}
+
+				return timeTotalSec;
+			},
+
+			getParTimeInSec()
+			{
+				return this.getCurrentLevelData().partimeSec;
+			},
+
+			getTimePercent()
+			{
+				return this.calculateTimeScore().timeScoreBase;
+			},
+
+			getTimeDiff()
+			{
+				return this.getCurrentTimeInSec() - this.getParTimeInSec();
+			},
+
+			getStarsCount()
+			{
+				return this.calculateFinalScore().score;
+			},
+
+			getEmptyStarsCount()
+			{
+				return 5 - this.calculateFinalScore().score;
+			},
+
+
+			// Calculations: Conversion
+			// ------------------------------------------------------------------------
+
+			// Converts seconds to an MM:SS object, with 2 keys: minutes + seconds
+			convertSecToMSObj( totalSec )
+			{
+				totalSec = parseInt( totalSec );
+
+				// Example: 02:33  (153s)
+				// 153 / 60 = 2.55 (2mins when rounded down)
+				// 153 % 60 = 33   (33sec)
+
+				const minutes = Math.floor( totalSec / 60 ); // eg. 153sec / 60 = 2.55, floor gives us 2min
+				const seconds = totalSec % 60; // eg. 153sec % 60 = 33sec
+
+				return { minutes, seconds, totalSec }
+			},
+
+
+			// Calculations: Main Score
+			// ------------------------------------------------------------------------
+
+			calculateShootingScore()
+			{
+				// Shooting Score
+				const accuracyP  = this.userAccuracy / 100;
+				const headshotsP = this.userHeadshots / 100;
+				const shootingScoreBase  = ( accuracyP + headshotsP );
+				const shootingScoreFinal = Math.min( 1.5, shootingScoreBase ); // cannot exceed 1.5
+				const score = shootingScoreFinal;
+
+				const shootingScoreData = {
+					accuracyP,
+					headshotsP,
+					shootingScoreBase,
+					shootingScoreFinal,
+					score,
+				};
+
+				return shootingScoreData;
+			},
+
+			calculateTimeScore()
+			{
+				const parTime      = this.getParTimeInSec();
+				const timeTotalSec = this.getCurrentTimeInSec();
+
+				const timeScoreBase = parTime / timeTotalSec;
+				const timeScoreMin  = Math.min( 1, timeScoreBase );
+				const timeScoreSqr  = Math.sqrt( timeScoreMin );
+				const score         = timeScoreSqr;
+
+				const timeScoreData = {
+					timeScoreBase,
+					timeScoreMin,
+					timeScoreSqr,
+					score,
+				};
+
+				return timeScoreData;
+			},
+
+
+			calculateFinalScore()
+			{
+				const shootingScoreFinal = this.calculateShootingScore().score;
+				const timeScoreSqr       = this.calculateTimeScore().score;
+
+				const finalScoreBase  = shootingScoreFinal * timeScoreSqr;
+				const finalScoreMulti = finalScoreBase * 5;
+				const finalScoreRound = Math.round( finalScoreMulti );
+				const finalScoreClamp = this.clamp( 1, finalScoreRound, 5 );
+				const score           = finalScoreClamp;
+
+				const finalScoreData = {
+					finalScoreBase,
+					finalScoreMulti,
+					finalScoreRound,
+					finalScoreClamp,
+					score,
+				};
+
+				return finalScoreData;
+			},
+
+
+			// Utils
+			// ============================================================================
+
+			clamp( min, val, max )
+			{
+				return Math.min( Math.max( val, min ), max );
+			},
+
+		},
+	}
+</script>
+
+
+<style lang="scss" scoped>
+	@import '@/assets/scss/_variables.scss';
+
+
+	// Columns
+	// ============================================================================
+
+	.cols-wrap {
+		display: flex;
+	}
+
+	.col {
+		height: 100%;
+
+		&--left {
+			margin-right: 3%;
+			width: 60%;
+		}
+
+		&--right {
+			width: 40%;
+		}
+	}
+
+	.col-panel {
+		border: 1px solid #1f1f1f;
+		padding: 20px;
+		background-color: rgba($color-bl, 0.4);
+		// background: #222222;
+
+		&.calculator {
+			border: 1px solid #2b2b2b;
+			background-color: rgba($color-bl, 0.2);
+		}
+	}
+
+
+	// Calculator
+	// ============================================================================
+
+	.calculator {
+		// border: 1px solid #131313;
+		// padding: 10px;
+		// display: inline-block;
+
+		+ .notes {
+			margin-top: 20px;
+		}
+	}
+
+	.calc-row {
+		display: flex;
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		label {
+			flex-shrink: 0;
+			padding: 5px 0;
+			width: 100px;
+		}
+
+		input,
+		select {
+			background-color: $color-bl;
+			color: white;
+			border: 1px solid rgba($color-w, 0.1);
+			padding: 5px;
+		}
+
+		select {
+			font-family: $font-mono-numbers;
+			font-size: 1.1rem;
+		}
+
+		input[type="number"] {
+			max-width: 60px;
+		}
+
+		.submit,
+		.clear {
+			padding: 10px 15px;
+		}
+	}
+
+	.time-sep {
+		display: inline-block;
+		margin: 0 3px 0 5px;;
+		line-height: 1.5;
+	}
+
+	.calc-btn {
+		background-color: $color-bl;
+		border: 1px solid rgba($color-bl, 0.1);
+		color: white;
+		cursor: pointer;
+		padding: 5px;
+
+		&--reset {
+			background-color: darken($color-r, 50);
+
+			&:hover {
+				background-color: darken($color-r, 30);
+			}
+		}
+	}
+
+	.time-notes {
+		display: inline-block;
+		font-size: 10px;
+		font-style: italic;
+		line-height: 1;
+		padding: 8px 0 0 5px;
+	}
+
+
+	// Results
+	// ============================================================================
+
+	.results-wrap {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.results-wrap__reset-btn {
+
+	}
+
+
+	// Stars
+	// ============================================================================
+
+	.stars {
+		.star {
+			svg {
+				fill: currentColor;
+				width: 30px;
+				height: 30px;
+			}
+
+			&--0 {
+				color: #7B6C59;
+			}
+
+			&--1 {
+				color: #892525;
+			}
+
+			&--gold {
+				color: #EEE873;
+			}
+		}
+	}
+
+
+	// Increment Buttons
+	// ============================================================================
+
+	.little-btn {
+		background-color: rgba($color-w, 0.05);
+		border: 0;
+		color: $color-w;
+		cursor: pointer;
+		font-size: 11px;
+		height: 28px;
+		opacity: 0.5;
+		padding: 5px 10px;
+		text-align: center;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	.autofill-time {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		line-height: 1;
+		margin-left: 10px;
+
+		&__btn {
+			// border-radius: 5px;
+		}
+	}
+
+	.plus-minus {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		line-height: 1;
+		margin-left: 12px;
+
+		&__btn {
+			border-radius: 100%;
+			width: 28px;
+			padding: 5px;
+			margin-right: 5px;
+
+			&--plus {
+				color: $color-g;
+			}
+
+			&--minus {
+				color: $color-r;
+			}
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.8;
+			}
+		}
+	}
+
+
+	// Notes
+	// ============================================================================
+
+	.notes {
+		// border: 1px solid #131313;
+		// padding: 10px;
+		// display: inline-block;
+
+		+ .notes {
+			margin-top: 10px;
+		}
+
+		hr {
+			border-top: 1px solid rgba($color-w, 0.1);
+			border-right: 0;
+			border-bottom: 0;
+			border-left: 0;
+		}
+
+		&--demos {
+			.note-heading {
+				margin-bottom: 10px;
+			}
+
+			.note-row {
+				margin-left: -2px;
+				+ .note-row {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+
+	.note-row {
+		display: flex;
+
+		&--warning {
+			margin-top: 10px;
+			font-size: 16px;
+		}
+	}
+
+	.note-row__label {
+		width: 120px;
+		opacity: 0.7;
+	}
+
+	.note-row__value {
+		// opacity: 0.6;
+	}
+
+	.note-heading {
+		font-size: 22px;
+		margin-bottom: 5px;
+	}
+
+</style>

@@ -50,6 +50,13 @@ const routes = [
 		name: 'resources',
 		component: () => import( '@/views/Resources.vue' ),
 	},
+
+	// Stars Calculator
+	{
+		path: '/stars-calculator',
+		name: 'stars-calculator',
+		component: () => import( '@/views/StarsCalc.vue' ),
+	},
 ]
 
 const headHeight = 50;

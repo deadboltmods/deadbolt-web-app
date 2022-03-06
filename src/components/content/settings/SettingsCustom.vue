@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<p>Details of the options avialable in custom.json, the new config for custom levels.</p>
+		<p>Details of the options available in custom.json, the new config for custom levels.</p>
 
 		<Table :rows="rows" :columns="columns"/>
 	</div>

@@ -38,3 +38,13 @@
 .util-mb-s { margin-bottom: 5px;  }
 .util-mb-m { margin-bottom: 10px; }
 .util-mb-l { margin-bottom: 40px; }
+
+// Fonts
+.font-mono-text {
+	font-family: $font-mono-text;
+}
+
+.font-mono-numbers {
+	font-family: $font-mono-numbers;
+	font-size: 16px;
+}
