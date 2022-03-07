@@ -8,6 +8,8 @@
 	import ContentWithSidebar from '@/components/ContentWithSidebar';
 	import MDWorkshopPlay from '@/markdown/guides/dcp-workshop-play.md'
 	import MDWorkshopPublish from '@/markdown/guides/dcp-workshop-publish.md'
+	import MDWorkshopZip from '@/markdown/guides/dcp-workshop-zip.md'
+	import MDWorkshopImageSizes from '@/markdown/guides/dcp-workshop-image-sizes.md'
 	import MDWeapons from '@/markdown/guides/dcp-weapons.md'
 	import MDDebuglog from '@/markdown/guides/dcp-debuglog.md'
 	// import MDIcon from '@/markdown/guides/dcp-icon.md'
@@ -26,13 +28,25 @@
 						specialHeading: true,
 					},
 					{
-						name: 'Play',
+						name: 'Image Sizes',
+						anchor: 'image-sizes',
+						component: MDWorkshopImageSizes,
+						groupKey: 'workshop'
+					},
+					{
+						name: 'ZIP Upload',
+						anchor: 'workshop-zip',
+						component: MDWorkshopZip,
+						groupKey: 'workshop'
+					},
+					{
+						name: 'Play Mods',
 						anchor: 'workshop-play',
 						component: MDWorkshopPlay,
 						groupKey: 'workshop'
 					},
 					{
-						name: 'Publish',
+						name: 'Publish Mods',
 						anchor: 'workshop-publish',
 						component: MDWorkshopPublish,
 						groupKey: 'workshop'
@@ -43,8 +57,8 @@
 						specialHeading: true,
 					},
 					{
-						name: 'Weapons',
-						anchor: 'weapons',
+						name: 'weapons.json',
+						anchor: 'weaponsjson',
 						component: MDWeapons,
 						groupKey: 'weapons'
 					},

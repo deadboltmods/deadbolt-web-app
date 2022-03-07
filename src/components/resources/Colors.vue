@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<p>The 150 most common colors in Deadbolt.</p>
+		<p>The 150 most common colours in Deadbolt.</p>
 		<div class="m-b">
 			<button class="toggleHex" @click="displayHex = !displayHex">Toggle Hex</button>
 		</div>

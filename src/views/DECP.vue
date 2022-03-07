@@ -6,10 +6,11 @@
 	import ContentWithSidebar from '@/components/ContentWithSidebar';
 	import DECPContent from '@/components/content/DECPContent'
 	import MDInstall from '@/markdown/decp/decp-install.md'
-	import MDRelease1 from '@/markdown/decp/decp-release-v1.md'
-	import MDRelease2 from '@/markdown/decp/decp-release-v2.md'
-	import MDRelease3 from '@/markdown/decp/decp-release-v3.md'
-	import MDRelease3P from '@/markdown/decp/decp-release-v3-preview.md'
+	import MDCL100 from '@/markdown/decp/changelog/decp-changelog-1.0.0.md'
+	import MDCL200 from '@/markdown/decp/changelog/decp-changelog-2.0.0.md'
+	import MDCL300 from '@/markdown/decp/changelog/decp-changelog-3.0.0.md'
+	import MDCL300P from '@/markdown/decp/changelog/decp-changelog-3.0.0-preview.md'
+	import MDCL400 from '@/markdown/decp/changelog/decp-changelog-4.0.0.md'
 
 	export default {
 		name: 'DECP',
@@ -40,27 +41,33 @@
 						specialHeading: true,
 					},
 					{
+						name: '4.0.0',
+						anchor: 'MDCL400',
+						component: MDCL400,
+						groupKey: 'changelog',
+					},
+					{
 						name: '3.0.0',
-						anchor: 'MDRelease3',
-						component: MDRelease3,
+						anchor: 'MDCL300',
+						component: MDCL300,
 						groupKey: 'changelog',
 					},
 					{
 						name: '3.0.0-preview',
-						anchor: 'MDRelease3P',
-						component: MDRelease3P,
+						anchor: 'MDCL300P',
+						component: MDCL300P,
 						groupKey: 'changelog',
 					},
 					{
 						name: '2.0.0',
-						anchor: 'MDRelease2',
-						component: MDRelease2,
+						anchor: 'MDCL200',
+						component: MDCL200,
 						groupKey: 'changelog',
 					},
 					{
 						name: '1.0.0',
-						anchor: 'MDRelease1',
-						component: MDRelease1,
+						anchor: 'MDCL100',
+						component: MDCL100,
 						groupKey: 'changelog',
 					},
 				],

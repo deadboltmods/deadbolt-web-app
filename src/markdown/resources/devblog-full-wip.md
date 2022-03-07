@@ -36,6 +36,11 @@ https://hopoo.tumblr.com/post/159869623264/if-ibzans-portal-went-to-the-land-of-
 origins of who and how reaper(s) are chosen + the first reaper
 https://hopoo.tumblr.com/post/159869588784/hey-a-few-days-ago-i-bought-binged-and-beat
 
+> Q: Hey, a few days ago, I bought, binged, and beat Deadbolt, (Amazing game, I am going to try out the Risk of Rain game you made soon!), but, I am a bit confused on some things. Who exactly was our character before they became a reaper? Did he choose to become a reaper, or was he chosen? Or is it one of those situations where you left it open to come up with your own backstory for him? I just loved the small musings and bits of dialogue he has, and I would like to learn more about him. Thank you :D
+> A: The origins of who and how reaper(s) are chosen are left unanswered in the game, because I think its too important to tack into some log somewhere. Originally, before the skeletons were in the game, reapers were created from suicide - there used (maybe still is?) a small bullet hole in the back of the reaper’s head that you could only see if when you went down the stairs to the docks. Timur the Tinkerer’s icon was actually a repurposed icon from the first reaper you’d fight against, who committed suicide via shotgun (hence the missing chunks, jaw, and the bullet holes in the back of the head.)
+>
+> Yeah.
+
 How Ibzan decides where to teleport
 https://hopoo.tumblr.com/post/156762956519/is-there-a-particular-way-ibzan-decides-where-to
 

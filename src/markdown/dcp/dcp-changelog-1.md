@@ -12,7 +12,7 @@
 - Bodyswap. Use `Alt` + `MMB` to swap places with any enemy
 - _These could become character perks if flshed out, I'm very open to feedback on them_
 
-![](@/assets/images/screenshots/1.6/teleport-finished.gif)
+![](@/assets/images/screenshots/dcp/1.6/teleport-finished.gif)
 
 ### Globalconfig:
 
@@ -32,7 +32,7 @@
 - oMotorcycleBig & oMotorcycleSmall. Both use cut sprites. They have 2 frames each: one empty, one with a skeleton.
 - oStripperVamp & oStripperPole. Both are background only
 
-![](@/assets/images/screenshots/1.6/stripper.gif)
+![](@/assets/images/screenshots/dcp/1.6/stripper.gif)
 
 ### Misc
 
@@ -80,7 +80,7 @@ Saving is now possible. Saves are both made and loaded from a new location Deadb
 - Enabled options by default: `pause_althoversound` + `customlocal_teleport`
 - Fix: Vamp2 sprite not working as a playable character (untested)
 
-![](@/assets/images/screenshots/1.3.0/charon-lich-arm.gif)
+![](@/assets/images/screenshots/dcp/1.3.0/charon-lich-arm.gif)
 
 ## 1.2.0
 
@@ -103,7 +103,7 @@ Saving is now possible. Saves are both made and loaded from a new location Deadb
 
 Initial release. Includes a toon of features, including:
 
-![](@/assets/images/screenshots/1.6/walk-stealth.gif)
+![](@/assets/images/screenshots/dcp/1.6/walk-stealth.gif)
 <div class="md-image-caption">Walk sprites by Nintee</div>
 
 ![](@/assets/images/screenshots/features/debug-overlay.png)

@@ -13,6 +13,7 @@
 	// import MDEarlyDev from '@/markdown/resources/earlydev.md'
 	import Colors from '@/components/resources/Colors'
 	import DrawCtext from '@/components/resources/DrawCtext'
+import CutscenePortraits from '@/components/resources/CutscenePortraits'
 
 	export default {
 		name: 'Resources',
@@ -53,6 +54,13 @@
 					// 	groupKey: 'dev'
 					// },
 					{
+						name: 'Cutscene Portraits',
+						anchor: 'cutsceneportraits',
+						component: CutscenePortraits,
+						groupKey: 'misc',
+						useStyledContentClass: true
+					},
+					{
 						name: 'draw_ctext',
 						anchor: 'drawctext',
 						component: DrawCtext,
@@ -60,7 +68,7 @@
 						useStyledContentClass: false
 					},
 					{
-						name: 'Color Palette',
+						name: 'Colour Palette',
 						anchor: 'colors',
 						component: Colors,
 						groupKey: 'misc'

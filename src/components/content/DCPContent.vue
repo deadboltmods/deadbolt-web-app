@@ -2,7 +2,7 @@
 	<div>
 		<section class="util-mb-l">
 			<p>DCP is a massive update to the codebase of <a target="_blank" href="https://store.steampowered.com/app/394970/DEADBOLT/">DEADBOLT</a>, a 2016 game by Hopoo, the developers behind Risk of Rain.</p>
-			<p class="color-r">DCP is currently in alpha. Some features are WIP. Expect bugs.</p>
+			<p class="color-r">DCP is currently in alpha. Bugs may be present. Always back up your saves.</p>
 		</section>
 
 		<section class="flex-container-center">
@@ -22,7 +22,7 @@
 		name: 'DCPContent',
 		data() {
 			return {
-				version: '2.2.0',
+				version: '3.0.0',
 				domainBase: 'https://files.codemuffin.com/deadbolt'
 			}
 		},

@@ -4,7 +4,7 @@ The biggest update yet, DCP v2.0.0 offers new weapons, enemy sprite replacements
 
 Replace the sprites of every enemy, and even Charon!
 
-![](@/assets/images/screenshots/1.7/charon-resprite.png)
+![](@/assets/images/screenshots/dcp/1.7/charon-resprite.png)
 
 Custom sprites have their own folder named Sprites, in your LocalAppData folder.
 
@@ -14,7 +14,7 @@ You can also **load custom sprites from the workshop**, like you can with campai
 
 The debug log has extensive reporting on which sprites have been replaced. Find out how to enable logging in the [guides](/guides#debuglog).
 
-![](@/assets/images/screenshots/1.7/debuglog-sprites-crop.png)
+![](@/assets/images/screenshots/dcp/1.7/debuglog-sprites-crop.png)
 
 _Note: Custom sprite origins are always set to the middle-bottom. Reaper sprite swap support is also planned_
 
@@ -22,7 +22,7 @@ _Note: Custom sprite origins are always set to the middle-bottom. Reaper sprite 
 
 Charon is now a playable character, thanks to Nintee who provided him with wonderful new running animations.
 
-![](@/assets/images/screenshots/1.7/charon-run.gif)
+![](@/assets/images/screenshots/dcp/1.7/charon-run.gif)
 
 Get your config from the [config.json generator](/config/customjson).
 
@@ -32,7 +32,7 @@ Charon sprites can also be swapped out, with the new sprite replacement system. 
 
 Charon's shop has also received a hefty upgrade. The stats box no longer obscures the secondary weapons list, and stats are clearer and more useful.
 
-![](@/assets/images/screenshots/1.7/oUpgrade-800.png)
+![](@/assets/images/screenshots/dcp/1.7/oUpgrade-800.png)
 
 ## Controller
 
@@ -42,7 +42,7 @@ A new setting for _Prefs.ini_ saves if the gamepad is on/off.
 
 A new <span class="color-purple">globalconfig.json</span> setting allows you to aim with the left stick, like on the Switch version.
 
-![](@/assets/images/screenshots/1.7/gamepad-settings.png)
+![](@/assets/images/screenshots/dcp/1.7/gamepad-settings.png)
 
 ## Weapons
 
@@ -54,7 +54,7 @@ It can be added to levels with `oCbow`, and bought from Charon for **120 souls**
 
 Start with it in your custom levels with the [config.json generator](/config/customjson).
 
-![](@/assets/images/screenshots/1.7/cbow-ammo-handling.gif)
+![](@/assets/images/screenshots/dcp/1.7/cbow-ammo-handling.gif)
 
 ### Landmine
 
@@ -82,7 +82,7 @@ Workshop ID paths now accepts numbers, instead of just strings, making them less
 
 Added 2 new enemy AI indicators: `ai_range_sight` (orange rectangle) + `ai_range_shoot` (red triangle).
 
-![](@/assets/images/screenshots/1.7/shoot-range-cones.gif)
+![](@/assets/images/screenshots/dcp/1.7/shoot-range-cones.gif)
 
 <div class="md-image-caption">Indicators for shoot ranges. Custom characters are by TheMagistrate</div>
 
@@ -106,7 +106,7 @@ The skip `skipto_mission_select` no longer requires `skipto_apartment` to be ena
 
 A new headshot line-of-sight indicator is available in the experimental options of <span class="color-purple">globalconfig.json</span>.
 
-![](@/assets/images/screenshots/1.6/headshot-hover.gif)
+![](@/assets/images/screenshots/dcp/1.6/headshot-hover.gif)
 
 Load Custom: Full page scroll is now bound to page up/down (_todo: show this in the UI_)
 

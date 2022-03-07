@@ -36,7 +36,7 @@
 		name: 'DECPContent',
 		data() {
 			return {
-				version: '3.2.0',
+				version: '4.0.0',
 				domainBase: 'https://files.codemuffin.com/deadbolt'
 			}
 		},

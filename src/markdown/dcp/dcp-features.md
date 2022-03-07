@@ -4,16 +4,19 @@
 
 ## New Game Features
 
-- Moddable sprites: All enemy sprites are replaceable
-- Overhauled Workshop menu shows level descriptions, creator names, and your own stats
-- Charon's weapon purchase screen shows weapon stats, with colours showing affordable items
-- Load Game menu shows your soul & death counts for each save
-- Workshop pause menu now has Restart & Quit to Custom options
-- 2 entirely new weapons: Burst Pistol and Sickle
-- 2 console weapons, buyable from Charon: Landmine and Compound Crossbow
-- Hold shift to walk - with custom sprite animations by <a target="_blank" href="https://steamcommunity.com/id/Nintee/myworkshopfiles/?appid=394970">Nintee</a>
-- Visual indicators show you who will hear your gunshot
-- Customise weapons with a huge JSON
+- 2 uncut weapons: Burst Pistol and Sickle
+- 3 console weapons: Compound Crossbow, Tac. Knife + .38 Pistol, and Landmine
+- Weapon mods, including Scythe bullet deflect
+- Fully moddable enemy sprites
+- Overhauled Workshop menu with descriptions, authors, marking favourites, and stats for completion time and death counts
+- View weapon stats from Charon and your trunk
+- Improved save file stats: The Load Game screen now shows shows your soul & death counts for each save
+- New campaign pause menu option to quit to the mission select screen
+- New workshop pause menu option: Restart, and Quick to Custom
+- Hold `Shift` to walk silently - with custom sprite animations by <a target="_blank" href="https://steamcommunity.com/id/Nintee/myworkshopfiles/?appid=394970">Nintee</a>
+- Press `Ctrl` to roll for extra speed, and to cross small gaps
+- Visual indicators
+- Customise weapons via JSON (based on [this spreadsheet](https://docs.google.com/spreadsheets/d/1qRyF3laHK2bKYyI552aA5PElzib8ak1FfLNxDId9Lzg/edit#gid=482879943))
 - Loads of vanilla bugfixes
 
 ## Level Creation
@@ -23,10 +26,13 @@ See some of the new level options in action in <a target="_blank" href="https://
 - Fully playable NPCs, with their own stats and weapons
 - Levels can be published with specific player characters, weapons, and weather
 - Debug options for local maps: Teleport, infinite ammo, access all weapons from the trunk, and more
-- Unsupported objects no longer cause a crash (eg. oRef1), and now show a tip with the object name
-
-## WIP Features
-
+- Unsupported objects no longer crash (eg. oRef1)
+- New object features, including wallpaper colours and water height
 - Publish entire custom campaigns to the Workshop ([video](https://www.youtube.com/watch?v=qMXxaFbH5BQ))
-- Rolling! Dive across the floor for extra speed
-- So many planned features. Join the [Deadbolt Discord](https://discord.gg/nw3Ad2c) for early previews, and to share your ideas for the future of DCP
+
+## Notes
+
+- Steam achievements are disabled. You can stil be unlock them in-game and receive souls for them, but they won't count in Steam.
+- DCP is in the alpha stage. Many new features are WIP, with even more planned.
+- Join the [Deadbolt Modding Discord](https://discord.gg/8dqM6xDmrC) for early previews, and to share your ideas for the future of DCP!
+- Please report any bugs to the modding discord. It helps enormously.

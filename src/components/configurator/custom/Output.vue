@@ -18,7 +18,7 @@
 		name: 'Output',
 		data() {
 			return {
-				dcpVersion: '2.2.0',
+				dcpVersion: '3.0.0',
 			}
 		},
 		computed: {

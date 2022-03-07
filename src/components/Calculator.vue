@@ -3,7 +3,7 @@
 
 		<!-- Calculator -->
 		<div class="col col--left">
-			<div class="calculator col-panel">
+			<div class="calculator panel">
 				<div class="calc-row">
 					<label>Level</label>
 					<select v-model="userLevelIndex">
@@ -20,7 +20,6 @@
 					<input type="number" placeholder="mins" min="0" v-model.number="userTimeMin" v-on:keyup.down="maybeUpdateSecs()">
 					<span class="time-sep">:</span>
 					<input type="number" placeholder="sec" max="59" min="0" v-model.number="userTimeSec" v-on:keyup.up="maybeUpdateMins()">
-					<!-- <span class="time-notes" data-time-notes></span> -->
 					<div class="autofill-time">
 						<button tabindex="-1" class="autofill-time__btn little-btn" @click="autofillTime()">FILL WITH PAR</button>
 					</div>
@@ -33,7 +32,6 @@
 						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userAccuracy = increaseUntilMax( userAccuracy, 10, 100 )">+10</button>
 						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userAccuracy = reduceUntilMin( userAccuracy, -10, 0 )">-10</button>
 					</div>
-					<!-- <div class="shooting-score-note" data-shooting-score-note></div> -->
 				</div>
 
 				<div class="calc-row">
@@ -43,7 +41,6 @@
 						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userHeadshots = increaseUntilMax( userHeadshots, 10, 100 )">+10</button>
 						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userHeadshots = reduceUntilMin( userHeadshots, -10, 0 )">-10</button>
 					</div>
-					<!-- <div class="shooting-score-note" data-shooting-score-note></div> -->
 				</div>
 
 				<div class="calc-row calc-row--results">
@@ -62,7 +59,7 @@
 						</div>
 
 						<div class="results-wrap__reset-btn">
-							<button type="reset" class="calc-btn calc-btn--reset" @click="resetCalc()">Reset</button>
+							<button type="reset" class="calc-btn calc-btn--reset" @click="resetCalc()">RESET</button>
 						</div>
 					</div>
 				</div>
@@ -70,7 +67,7 @@
 			</div><!--/.calculator-->
 
 			<!-- Notes: Shooting -->
-			<div class="notes notes--demos col-panel">
+			<div class="notes notes--demos panel">
 				<div class="note-heading">
 					Demos
 				</div>
@@ -86,7 +83,7 @@
 		<div class="col col--right">
 
 			<!-- Notes: Time -->
-			<div class="notes col-panel">
+			<div class="notes panel">
 				<div class="note-heading">
 					Time
 				</div>
@@ -122,7 +119,7 @@
 			</div>
 
 			<!-- Notes: Shooting -->
-			<div class="notes col-panel">
+			<div class="notes panel">
 				<div class="note-heading">
 					Shooting
 				</div>
@@ -141,7 +138,7 @@
 			</div>
 
 			<!-- Notes: Final Score -->
-			<div class="notes col-panel">
+			<div class="notes panel">
 				<div class="note-heading">
 					Final
 				</div>
@@ -167,7 +164,7 @@
 			</div>
 
 			<!-- Notes: Debug -->
-			<div class="notes col-panel" v-if="showDebugInfo">
+			<div class="notes panel" v-if="showDebugInfo">
 				<div class="note-row">
 					<div class="note-row__label">userLevelIndex</div>
 					<div class="note-row__value">{{ userLevelIndex }}</div>
@@ -229,7 +226,7 @@
 
 			resetCalc()
 			{
-				this.userLevelIndex = 0;
+				// this.userLevelIndex = 0;
 				this.userTimeMin    = 0;
 				this.userTimeSec    = 0;
 				this.userAccuracy   = 0;
@@ -534,7 +531,7 @@
 	@import '@/assets/scss/_variables.scss';
 
 
-	// Columns
+	// Columns + Shared
 	// ============================================================================
 
 	.cols-wrap {
@@ -554,11 +551,11 @@
 		}
 	}
 
-	.col-panel {
+	.panel {
 		border: 1px solid #1f1f1f;
 		padding: 20px;
-		background-color: rgba($color-bl, 0.4);
-		// background: #222222;
+		background-color: rgba($color-bl, 0.3);
+		// background-color: rgba($color-w, 0.05);
 
 		&.calculator {
 			border: 1px solid #2b2b2b;

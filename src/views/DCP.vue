@@ -15,6 +15,7 @@
 	import MD201 from '@/markdown/dcp/changelog/dcp-changelog-2.0.1.md'
 	import MD210 from '@/markdown/dcp/changelog/dcp-changelog-2.1.0.md'
 	import MD220 from '@/markdown/dcp/changelog/dcp-changelog-2.2.0.md'
+	import MD300 from '@/markdown/dcp/changelog/dcp-changelog-3.0.0.md'
 
 	import MDSetupCustomLevels from '@/markdown/dcp/setup/dcp-setup-custom-levels.md'
 	import MDSetupCustomSprites from '@/markdown/dcp/setup/dcp-setup-custom-sprites.md'
@@ -79,6 +80,12 @@
 						name: 'Changelog',
 						hideFromSidebar: true,
 						specialHeading: true,
+					},
+					{
+						name: '3.0.0',
+						anchor: 'v300',
+						component: MD300,
+						groupKey: 'changelog',
 					},
 					{
 						name: '2.2.0',
