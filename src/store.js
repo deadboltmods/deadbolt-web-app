@@ -11,11 +11,16 @@ export default new Vuex.Store({
 			secondaryWeapon: 4,
 		},
 		settings: {
+			// Level Config (config.json)
 			showExtraData: false,
 			showUnplayableCharacters: false,
 			showWeaponStats: true,
 			showWeaponDescriptions: true,
 			showUnusableWeapons: false,
+
+			// Calculator
+			showCalculatorWarnings: true,
+			showCalculatorDebug: false,
 		},
 	},
 	getters: {

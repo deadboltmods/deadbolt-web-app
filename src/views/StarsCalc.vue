@@ -2,7 +2,8 @@
 	<div>
 		<ContentWithSidebar
 			:sections="sections"
-			:groupKeys="groupKeys"/>
+			:groupKeys="groupKeys"
+			:settings="settings"/>
 	</div>
 </template>
 <script>
@@ -15,7 +16,7 @@
 	import CalcParTimesTable from '@/components/content/calculator/CalcParTimesTable'
 
 	export default {
-		name: 'Resources',
+		name: 'StarsCalc',
 		components: {
 			ContentWithSidebar,
 		},
@@ -98,6 +99,13 @@
 					calcApp: 'Calculator',
 					calcNotes: 'Notes',
 					calcTimes: 'Par Times',
+				},
+
+				settings: {
+					'Settings': [
+						'showCalculatorWarnings',
+						'showCalculatorDebug'
+					]
 				}
 			}
 		},

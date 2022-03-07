@@ -1,196 +1,226 @@
 <template>
-	<div class="cols-wrap">
+	<div>
 
-		<!-- Calculator -->
-		<div class="col col--left">
-			<div class="calculator panel">
-				<div class="calc-row">
-					<label>Level</label>
-					<select v-model="userLevelIndex">
-						<template v-for="( levelData, levelIndex ) in allLevelStats">
-							<option :key="levelIndex" :value="levelIndex">
-								[{{ levelData.partimeMMSS }}] {{ levelData.chapter }}-{{ levelData.level }}: {{ levelData.name }}
-							</option>
-						</template>
-					</select>
-				</div>
-
-				<div class="calc-row">
-					<label>Time (mm:ss)</label>
-					<input type="number" placeholder="mins" min="0" v-model.number="userTimeMin" v-on:keyup.down="maybeUpdateSecs()">
-					<span class="time-sep">:</span>
-					<input type="number" placeholder="sec" max="59" min="0" v-model.number="userTimeSec" v-on:keyup.up="maybeUpdateMins()">
-					<div class="autofill-time">
-						<button tabindex="-1" class="autofill-time__btn little-btn" @click="autofillTime()">FILL WITH PAR</button>
+		<div class="row row--center-cols">
+			<!-- Calculator -->
+			<div class="column" :class="( showCalculatorDebug ? 'col-2-3' : 'col-auto' )">
+				<div class="calculator panel">
+					<div class="calc-row">
+						<label>Level</label>
+						<select v-model="userLevelIndex">
+							<template v-for="( levelData, levelIndex ) in allLevelStats">
+								<option :key="levelIndex" :value="levelIndex">
+									[{{ levelData.partimeMMSS }}] {{ levelData.chapter }}-{{ levelData.level }}: {{ levelData.name }}
+								</option>
+							</template>
+						</select>
 					</div>
-				</div>
 
-				<div class="calc-row">
-					<label>Accuracy %</label>
-					<input type="number" placeholder="eg 60" min="0" max="100" v-model.number="userAccuracy">
-					<div class="plus-minus">
-						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userAccuracy = increaseUntilMax( userAccuracy, 10, 100 )">+10</button>
-						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userAccuracy = reduceUntilMin( userAccuracy, -10, 0 )">-10</button>
-					</div>
-				</div>
-
-				<div class="calc-row">
-					<label>Headshot %</label>
-					<input type="number" placeholder="eg 25" min="0" max="100" v-model.number="userHeadshots">
-					<div class="plus-minus">
-						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userHeadshots = increaseUntilMax( userHeadshots, 10, 100 )">+10</button>
-						<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userHeadshots = reduceUntilMin( userHeadshots, -10, 0 )">-10</button>
-					</div>
-				</div>
-
-				<div class="calc-row calc-row--results">
-					<label>Results</label>
-					<div class="results-wrap">
-						<div class="stars">
-							<!-- Filled Stars (red, or gold if 5-star) -->
-							<span v-for="starNumber in getStarsCount()" :class="( getStarsCount() === 5 ) ? 'star--gold' : 'star--1'" class="star" :key="'starNumber' + starNumber">
-								<inline-svg :src="require('@/assets/svg/material-icons/mi-star-rate.svg')"/>
-							</span>
-
-							<!-- Empty stars -->
-							<span v-for="emptyStarNumber in getEmptyStarsCount()" class="star star--0" :key="'emptyStarNumber' + emptyStarNumber">
-								<inline-svg :src="require('@/assets/svg/material-icons/mi-star-rate.svg')"/>
-							</span>
-						</div>
-
-						<div class="results-wrap__reset-btn">
-							<button type="reset" class="calc-btn calc-btn--reset" @click="resetCalc()">RESET</button>
+					<div class="calc-row">
+						<label>Time (mm:ss)</label>
+						<input type="number" placeholder="m" min="0" v-model.number="userTimeMin" v-on:keyup.down="maybeUpdateSecs()">
+						<span class="time-sep">:</span>
+						<input type="number" placeholder="s" max="59" min="0" v-model.number="userTimeSec" v-on:keyup.up="maybeUpdateMins()">
+						<div class="autofill-time">
+							<button tabindex="-1" class="autofill-time__btn little-btn" @click="autofillTime()">FILL WITH PAR</button>
 						</div>
 					</div>
-				</div>
 
-			</div><!--/.calculator-->
+					<div class="calc-row">
+						<label>Accuracy %</label>
+						<input type="number" min="0" max="100" v-model.number="userAccuracy">
+						<div class="plus-minus">
+							<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userAccuracy = increaseUntilMax( userAccuracy, 10, 100 )">+10</button>
+							<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userAccuracy = reduceUntilMin( userAccuracy, -10, 0 )">-10</button>
+						</div>
+					</div>
 
-			<!-- Notes: Shooting -->
-			<div class="notes notes--demos panel">
-				<div class="note-heading">
-					Demos
-				</div>
-				<div class="note-row"><button class="little-btn" @click="setDemo1()">Demo 1: Test Decimals</button></div>
-				<div class="note-row"><button class="little-btn" @click="setDemo2()">Demo 2: Test Max Values</button></div>
-				<div class="note-row"><button class="little-btn" @click="setDemo3()">Demo 3: Set shooting% to 150</button></div>
+					<div class="calc-row">
+						<label>Headshot %</label>
+						<input type="number" min="0" max="100" v-model.number="userHeadshots">
+						<div class="plus-minus">
+							<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--plus" @click="userHeadshots = increaseUntilMax( userHeadshots, 10, 100 )">+10</button>
+							<button tabindex="-1" class="little-btn plus-minus__btn plus-minus__btn--minus" @click="userHeadshots = reduceUntilMin( userHeadshots, -10, 0 )">-10</button>
+						</div>
+					</div>
+
+					<div class="calc-row calc-row--results">
+						<label>Stars</label>
+						<div class="results-wrap">
+							<div class="stars">
+								<!-- Filled Stars (red, or gold if 5-star) -->
+								<span v-for="starNumber in getStarsCount()" :class="( getStarsCount() === 5 ) ? 'star--gold' : 'star--1'" class="star" :key="'starNumber' + starNumber">
+									<inline-svg :src="require('@/assets/svg/material-icons/mi-star-rate.svg')"/>
+								</span>
+
+								<!-- Empty stars -->
+								<span v-for="emptyStarNumber in getEmptyStarsCount()" class="star star--0" :key="'emptyStarNumber' + emptyStarNumber">
+									<inline-svg :src="require('@/assets/svg/material-icons/mi-star-rate.svg')"/>
+								</span>
+							</div>
+
+							<div class="results-wrap__reset-btn">
+								<button type="reset" class="calc-btn calc-btn--reset" @click="resetCalc()">RESET</button>
+							</div>
+						</div>
+					</div>
+				</div><!--/.calculator-->
 			</div>
 
-		</div><!--/.col--left-->
+			<!-- Demo Buttons -->
+			<div class="column col-1-3" v-if="showCalculatorDebug">
+				<div class="notes notes--demos panel">
+					<div class="note-heading">
+						Quick Tests
+					</div>
+					<div class="note-row"><button class="little-btn" @click="setDemo1()">Decimals</button></div>
+					<div class="note-row"><button class="little-btn" @click="setDemo2()">Max Values</button></div>
+					<div class="note-row"><button class="little-btn" @click="setDemo3()">shooting% = 150</button></div>
+					<div class="note-row"><button class="little-btn" @click="setDemo4()">shooting% = 200</button></div>
+				</div>
+			</div>
+		</div><!--/.row-->
 
-
-		<!-- Data + Notes -->
-		<div class="col col--right">
-
+		<!-- Notes -->
+		<div class="row">
 			<!-- Notes: Time -->
-			<div class="notes panel">
-				<div class="note-heading">
-					Time
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">Yours</div>
-					<div class="note-row__value">{{ getCurrentTimeInSec() }} sec</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">Par</div>
-					<div class="note-row__value">{{ getParTimeInSec() }} sec</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">Diff</div>
-					<div class="note-row__value">
-						<span :class="( getTimeDiff() <= 0 ) ? 'color-g' : 'color-r'">
-							{{ getTimeDiff() }} sec
-						</span>
+			<div class="column col-1-3">
+				<div class="notes panel">
+					<div class="note-heading">
+						Time
 					</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">% <span class="color-dk">(par/yours)</span></div>
-					<div class="note-row__value">{{ roundDecimals( getTimePercent(), 10, true ) }} %</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">Score</div>
-					<div class="note-row__value">{{ roundDecimals( calculateTimeScore().score, 10, true ) }}</div>
-				</div>
-				<!--@todo:previouslyHad: ` && (getShootingPercent() !== 0)`-->
-				<div class="note-row note-row--warning" v-if="(getTimeDiff() < 0) && getCurrentTimeInSec() !== 0">
-					<!-- Max value warning for shooting -->
-					<span class="color-r">Note: Beating the par time won't increase your stars any further. The time score maxes out at 1.</span>
+					<div class="note-row">
+						<div class="note-row__label">Yours</div>
+						<div class="note-row__value">{{ getCurrentTimeInSec() }} sec</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Par</div>
+						<div class="note-row__value">{{ getParTimeInSec() }} sec</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Diff</div>
+						<div class="note-row__value">
+							<span :class="( getTimeDiff() <= 0 ) ? 'color-g' : 'color-r'" v-if="getCurrentTimeInSec() > 0">
+								{{ getTimeDiff() }} sec
+							</span>
+							<span v-else class="color-dk">?</span>
+						</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">% <span class="color-dk">(par/yours)</span></div>
+						<div class="note-row__value">
+							<span v-if="getCurrentTimeInSec() > 0">
+								{{ roundDecimals( getTimePercent(), 5, true ) }} %
+							</span>
+							<span v-else class="color-dk">?</span>
+						</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Score</div>
+						<div class="note-row__value">{{ roundDecimals( calculateTimeScore().score, 5, true ) }}</div>
+					</div>
+					<div class="note-row note-row--warning" v-if="(getTimeDiff() < 0) && getCurrentTimeInSec() !== 0">
+						<span class="color-dk">Note: Beating the par time won't increase your stars any further. The time score maxes out at 1.</span>
+					</div>
 				</div>
 			</div>
 
 			<!-- Notes: Shooting -->
-			<div class="notes panel">
-				<div class="note-heading">
-					Shooting
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">%</div>
-					<div class="note-row__value">{{ getShootingPercent() }} %  <span class="color-dk">({{ userAccuracy }} + {{ userHeadshots }})</span></div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">Score</div>
-					<div class="note-row__value">{{ calculateShootingScore().score }}</div>
-				</div>
-				<div class="note-row note-row--warning" v-if="getShootingPercent() > 150">
-					<!-- Max value warning for shooting -->
-					<span class="color-r">Note: Shooting score has a max of 1.5 (ie. 150% is the maximum counted total of accuracy% plus headshots%).</span>
+			<div class="column col-1-3">
+				<div class="notes panel">
+					<div class="note-heading">
+						Shooting
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Accuracy %</div>
+						<div class="note-row__value">{{ userAccuracy }} % </div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Headshots %</div>
+						<div class="note-row__value">{{ userHeadshots }} % </div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Total</div>
+						<div class="note-row__value">{{ userAccuracy + userHeadshots }}</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">% <span class="color-dk">({{ userAccuracy }} + {{ userHeadshots }})</span></div>
+						<div class="note-row__value">{{ getShootingPercent() }} % </div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Score</div>
+						<div class="note-row__value">{{ roundDecimals( calculateShootingScore().score, 5, true ) }}</div>
+					</div>
+					<div class="note-row note-row--warning" v-if="getShootingPercent() > 150">
+						<span class="color-dk">Note: Shooting score has a max of 1.5 (ie. 150% is the maximum counted total of accuracy% plus headshots%).</span>
+					</div>
 				</div>
 			</div>
 
 			<!-- Notes: Final Score -->
-			<div class="notes panel">
-				<div class="note-heading">
-					Final
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">Base</div>
-					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreBase, 10, true ) }}</div>
-				</div>
+			<div class="column col-1-3">
+				<div class="notes panel">
+					<div class="note-heading">
+						Final
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">Base</div>
+						<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreBase, 5, true ) }}</div>
+					</div>
 
-				<div class="note-row">
-					<div class="note-row__label">Multi (* 5)</div>
-					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreMulti, 10, true ) }}</div>
-				</div>
+					<div class="note-row">
+						<div class="note-row__label">Multi <span class="color-dk">(* 5)</span></div>
+						<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreMulti, 5, true ) }}</div>
+					</div>
 
-				<div class="note-row">
-					<div class="note-row__label">Multi Rounded</div>
-					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreRound, 10, true ) }}</div>
-				</div>
+					<div class="note-row">
+						<div class="note-row__label">Multi Rounded</div>
+						<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreRound, 10, true ) }}</div>
+					</div>
 
-				<div class="note-row">
-					<div class="note-row__label">Clamp</div>
-					<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreClamp, 10, true ) }}</div>
+					<div class="note-row">
+						<div class="note-row__label">Clamp <span class="color-dk">&gt;=1, &lt;=5</span></div>
+						<div class="note-row__value">{{ roundDecimals( calculateFinalScore().finalScoreClamp, 10, true ) }}</div>
+					</div>
+
+					<div class="note-row">
+						<div class="note-row__label">Stars</div>
+						<div class="note-row__value">{{ getStarsCount() }}</div>
+					</div>
 				</div>
 			</div>
 
 			<!-- Notes: Debug -->
-			<div class="notes panel" v-if="showDebugInfo">
-				<div class="note-row">
-					<div class="note-row__label">userLevelIndex</div>
-					<div class="note-row__value">{{ userLevelIndex }}</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">userTimeMin</div>
-					<div class="note-row__value">{{ userTimeMin }}</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">userTimeSec</div>
-					<div class="note-row__value">{{ userTimeSec }}</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">userAccuracy</div>
-					<div class="note-row__value">{{ userAccuracy }}</div>
-				</div>
-				<div class="note-row">
-					<div class="note-row__label">userHeadshots</div>
-					<div class="note-row__value">{{ userHeadshots }}</div>
+			<div class="column col-1-3" v-if="showCalculatorDebug">
+				<div class="notes panel">
+					<div class="note-heading">
+						DEBUG
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">userLevelIndex</div>
+						<div class="note-row__value">{{ userLevelIndex }}</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">userTimeMin</div>
+						<div class="note-row__value">{{ userTimeMin }}</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">userTimeSec</div>
+						<div class="note-row__value">{{ userTimeSec }}</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">userAccuracy</div>
+						<div class="note-row__value">{{ userAccuracy }}</div>
+					</div>
+					<div class="note-row">
+						<div class="note-row__label">userHeadshots</div>
+						<div class="note-row__value">{{ userHeadshots }}</div>
+					</div>
 				</div>
 			</div>
-
-		</div><!--/.col--right-->
+		</div><!--/.row-->
 
 	</div>
-
 </template>
 
 
@@ -208,9 +238,6 @@
 				// External
 				allLevelStats,
 
-				// Debug
-				showDebugInfo: false,
-
 				// User data (two-way binding)
 				userLevelIndex: 0,
 				userTimeMin: 0,
@@ -218,6 +245,12 @@
 				userAccuracy: 0,
 				userHeadshots: 0,
 			}
+		},
+		computed: {
+			showCalculatorDebug()
+			{
+				return this.$store.getters.getSetting( 'showCalculatorDebug' );
+			},
 		},
 		methods: {
 
@@ -257,6 +290,12 @@
 			{
 				this.userAccuracy   = 100;
 				this.userHeadshots  = 50;
+			},
+
+			setDemo4()
+			{
+				this.userAccuracy   = 100;
+				this.userHeadshots  = 100;
 			},
 
 
@@ -531,36 +570,62 @@
 	@import '@/assets/scss/_variables.scss';
 
 
-	// Columns + Shared
+	// Columns
 	// ============================================================================
 
-	.cols-wrap {
+	$gutters: 10px;
+
+	.row {
 		display: flex;
+		justify-content: space-between;
+		margin-left: -$gutters;
+		width: calc(100% + #{$gutters}); // adjust for gutters
+
+		&--center-cols {
+			justify-content: center;
+		}
+
+		+ .row {
+			margin-top: 20px;
+		}
+	}
+
+	.column {
+		height: 100%;
+		margin-left: $gutters / 2;
+		margin-right: $gutters / 2;
+		width: 100%;
+
+		&.calculator-col {
+			margin: 0 auto;
+		}
 	}
 
 	.col {
 		height: 100%;
 
-		&--left {
-			margin-right: 3%;
-			width: 60%;
+		&-1-3 {
+			max-width: 32%;
 		}
 
-		&--right {
-			width: 40%;
+		&-2-3 {
+			max-width: 67%;
+		}
+
+		&-auto {
+			width: auto;
 		}
 	}
+
+
+	// Shared
+	// ============================================================================
 
 	.panel {
 		border: 1px solid #1f1f1f;
 		padding: 20px;
 		background-color: rgba($color-bl, 0.3);
 		// background-color: rgba($color-w, 0.05);
-
-		&.calculator {
-			border: 1px solid #2b2b2b;
-			background-color: rgba($color-bl, 0.2);
-		}
 	}
 
 
@@ -568,9 +633,8 @@
 	// ============================================================================
 
 	.calculator {
-		// border: 1px solid #131313;
-		// padding: 10px;
-		// display: inline-block;
+		background-color: rgba($color-bl, 0.2);
+		border: 1px solid rgba($color-purple, 0.3);
 
 		+ .notes {
 			margin-top: 20px;
@@ -597,6 +661,7 @@
 			color: white;
 			border: 1px solid rgba($color-w, 0.1);
 			padding: 5px;
+			font-family: $font-mono-numbers;
 		}
 
 		select {
@@ -605,7 +670,7 @@
 		}
 
 		input[type="number"] {
-			max-width: 60px;
+			width: 60px;
 		}
 
 		.submit,
@@ -636,27 +701,11 @@
 		}
 	}
 
-	.time-notes {
-		display: inline-block;
-		font-size: 10px;
-		font-style: italic;
-		line-height: 1;
-		padding: 8px 0 0 5px;
-	}
-
-
-	// Results
-	// ============================================================================
-
 	.results-wrap {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-	}
-
-	.results-wrap__reset-btn {
-
 	}
 
 

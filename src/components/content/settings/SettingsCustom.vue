@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<p>Details of the options available in custom.json, the new config for custom levels.</p>
+		<p>Details of the options available in <span class="color-purple">custom.json</span>, the new config for custom levels.</p>
+		<p>You can quickly build your own version with the <a href="/config/customjson">Level Config</a> app.</p>
 
 		<Table :rows="rows" :columns="columns"/>
 	</div>
@@ -27,7 +28,7 @@
 						col1: 'DCP',
 						col2: 'version',
 						col3: 'depends',
-						col4: 'The version of DCP when the config was generated.',
+						col4: 'The version of DCP when the config was generated. Only for your own reference.',
 						modileHideCol1: false,
 					},
 					{

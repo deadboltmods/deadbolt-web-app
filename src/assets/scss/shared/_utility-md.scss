@@ -19,6 +19,16 @@
 	align-items: center;
 
 	> * {
-		margin: 0 5px;
+		margin: 0 10px;
+	}
+
+	&--spacious {
+		> * {
+			margin: 0 40px;
+		}
+	}
+
+	&--align-bottom {
+		align-items: flex-end;
 	}
 }

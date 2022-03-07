@@ -2,7 +2,7 @@
 	<div>
 		<p>Details of the <span class="color-g">par times</span> for each level.</p>
 
-		<p>The <span class="color-r">slowest time</span> is the maximum time allowed if your <span class="color-purple">shooting%</span> totals 150 or higher. One second over this (or 1% lower in your shooting%) and you'll lose your 5 stars.</p>
+		<p>The <span class="color-r">slowest time</span> are also shown. This is the slowest time allowed if your <span class="color-purple">shooting%</span> totals 150 or higher. One second over this (or 1% lower in your shooting%) and you'll lose your 5 stars.</p>
 
 		<TableSimple :rows="rows" :columns="columns"/>
 	</div>

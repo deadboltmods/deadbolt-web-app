@@ -1,37 +1,48 @@
 <template>
 	<nav class="tabs tabs--2col">
 		<ul class="tab-btns tab-btns--left">
+			<!-- Main Links (always shown) -->
 			<li>
 				<router-link class="tab-btn" to="/" exact>
-					<!-- <img alt="Home" class="tab-icon tab-inner-fade" src="@/assets/sprites/house.png"> -->
 					<div class="tab-btn__svg">
 						<inline-svg :src="require('@/assets/svg/material-icons/mi-home.svg')"/>
 					</div>
 				</router-link>
 			</li>
-
 			<li><router-link class="tab-btn color-purple" to="/dcp">DCP</router-link></li>
 			<li><router-link class="tab-btn color-teal" to="/decp">DECP</router-link></li>
 
-			<!-- Below: Wide Only (Desktop) -->
-			<li class="bp-wide-only"><router-link class="tab-btn color-y" to="/config/customjson">Level Config</router-link></li>
+			<!-- Desktop Only -->
+			<li class="bp-wide-only">
+				<router-link class="tab-btn color-y" to="/config/customjson">
+					<div class="bp-hide-below-medium">
+						Level Config
+					</div>
+					<div class="tab-btn__svg bp-hide-above-medium">
+						<inline-svg :src="require('@/assets/svg/material-icons/mi-construction.svg')"/>
+						<div class="tab-tooltip">Level Config</div>
+					</div>
+				</router-link>
+			</li>
+
 			<li class="bp-wide-only"><router-link class="tab-btn" to="/guides">Guides</router-link></li>
 			<li class="bp-wide-only"><router-link class="tab-btn" to="/settings">Settings</router-link></li>
+			<li class="bp-wide-only"><router-link class="tab-btn" to="/resources">Resources</router-link></li>
 			<li class="bp-wide-only">
 				<router-link class="tab-btn" to="/stars-calculator">
 					<div class="bp-hide-below-medium">
 						Stars Calculator
-						<div class="tab-btn__tooltip tab-btn__tooltip--new">NEW!</div>
+						<div class="tab-tooltip tab-tooltip--new tab-tooltip--center">NEW!</div>
 					</div>
 					<div class="tab-btn__svg bp-hide-above-medium">
 						<inline-svg :src="require('@/assets/svg/material-icons/mi-star.svg')"/>
-						<div class="tab-btn__tooltip">Stars Calculator</div>
+						<div class="tab-tooltip tab-tooltip--new">NEW!</div>
+						<div class="tab-tooltip tab-tooltip--center">Stars Calculator</div>
 					</div>
 				</router-link>
 			</li>
-			<li class="bp-wide-only"><router-link class="tab-btn" to="/resources">Resources</router-link></li>
 
-			<!-- Below: Narrow Only (Mobile) -->
+			<!-- Mobile Menu -->
 			<li class="tab-parent bp-narrow-only">
 				<span class="tab-btn" to="#">...</span>
 				<ul class="tab-submenu tab-submenu--align-right">
@@ -41,15 +52,21 @@
 					<li><router-link class="tab-btn" to="/resources">Resources</router-link></li>
 					<li><router-link class="tab-btn" to="/stars-calculator">Stars Calculator</router-link></li>
 					<li>
-						<a class="tab-btn tab-btn--mobile-external" target="_blank" href="https://discord.gg/nw3Ad2c">
+						<a class="tab-btn tab-btn--mobile-external" target="_blank" :href="websiteUrls.discordMain">
 							<inline-svg :src="require('@/assets/svg/material-icons/mi-open-in-new.svg')"/>
-							Discord: Deadbolt
+							Report Bugs (on Discord)
 						</a>
 					</li>
 					<li>
-						<a class="tab-btn tab-btn--mobile-external" target="_blank" href="https://discord.gg/8dqM6xDmrC">
+						<a class="tab-btn tab-btn--mobile-external" target="_blank" :href="websiteUrls.discordMain">
 							<inline-svg :src="require('@/assets/svg/material-icons/mi-open-in-new.svg')"/>
-							Discord: Deadbolt Modding
+							Join Deadbolt Discord
+						</a>
+					</li>
+					<li>
+						<a class="tab-btn tab-btn--mobile-external" target="_blank" :href="websiteUrls.discordModding">
+							<inline-svg :src="require('@/assets/svg/material-icons/mi-open-in-new.svg')"/>
+							Join Deadbolt Modding Discord
 						</a>
 					</li>
 				</ul>
@@ -57,21 +74,30 @@
 		</ul>
 
 		<!-- Right Nav: Discord -->
-		<ul class="tab-btns tab-btns--right bp-hide-below-medium">
+		<!-- bp-hide-below-medium -->
+		<ul class="tab-btns tab-btns--right bp-wide-only">
 			<li>
-				<a class="tab-btn tab-btn--has-svg" target="_blank" href="https://discord.gg/nw3Ad2c">
-					<div class="tab-btn__svg tab-btn__svg--discord-main">
-						<inline-svg :src="require('@/assets/svg/discord-logo.svg')"/>
+				<a class="tab-btn" target="_blank" :href="websiteUrls.discordModdingBugReportChannel">
+					<div class="tab-btn__svg tab-btn__svg--report-bug">
+						<inline-svg :src="require('@/assets/svg/material-icons/mi-bug-report.svg')"/>
+						<div class="tab-tooltip">Report Bugs</div>
 					</div>
-					<div class="tab-btn__tooltip">Deadbolt Discord</div>
 				</a>
 			</li>
 			<li>
-				<a class="tab-btn tab-btn--has-svg" target="_blank" href="https://discord.gg/8dqM6xDmrC">
+				<a class="tab-btn tab-btn--has-svg" target="_blank" :href="websiteUrls.discordMain">
+					<div class="tab-btn__svg tab-btn__svg--discord-main">
+						<inline-svg :src="require('@/assets/svg/discord-logo.svg')"/>
+					</div>
+					<div class="tab-tooltip">Deadbolt Discord</div>
+				</a>
+			</li>
+			<li>
+				<a class="tab-btn tab-btn--has-svg" target="_blank" :href="websiteUrls.discordModding">
 					<div class="tab-btn__svg tab-btn__svg--discord-moding">
 						<inline-svg :src="require('@/assets/svg/discord-logo.svg')"/>
 					</div>
-					<div class="tab-btn__tooltip">Deadbolt Modding Discord</div>
+					<div class="tab-tooltip">Deadbolt Modding Discord</div>
 				</a>
 			</li>
 		</ul>
@@ -80,9 +106,15 @@
 
 <script>
 	import InlineSvg from 'vue-inline-svg'
+	import websiteUrls from '@/data/websiteUrls'
 
 	export default {
 		name: 'HeaderMenu',
+		data() {
+			return {
+				websiteUrls: websiteUrls,
+			}
+		},
 		components: {
 			InlineSvg,
 		}
@@ -93,12 +125,15 @@
 	@import '../assets/scss/_variables.scss';
 
 	.tabs {
-		width: 100%;
+		@media (max-width: 960px) {
+			width: 100%;
+		}
 
 		&--2col {
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
+			width: 100%;
 		}
 	}
 
@@ -110,12 +145,15 @@
 		justify-content: space-around;
 		max-width: 1000px;
 		user-select: none;
-		width: 100%;
+
+		@media (max-width: 960px) {
+			width: 100%;
+		}
 
 		// &--left {}
 
 		&--right {
-			width: 180px;
+			// width: 180px;
 		}
 	}
 
@@ -163,56 +201,30 @@
 
 		&--discord-main {
 			color: #C1612D; // unique
+			color: $color-g;
 		}
 
 		&--discord-moding {
 			color: #96816E; // unique
+			color: $color-b;
+		}
+
+		&--report-bug {
+			color: $color-r;
 		}
 	}
 
-	.tab-btn__tooltip {
-		background-color: #111213;
-		border-radius: 0 0 5px 5px;
-		font-family: $font-sans;
-		font-size: 1.2rem;
-		left: 50%;
-		margin-top: -20px;
-		opacity: 0;
-		padding: 5px;
-		position: absolute;
-		text-align: center;
-		top: 100%;
-		transform: translateX(-50%);
-		transition: 0.3s;
-		z-index: 1;
-		// This clip path hides the el until it's hovered. Without this,
-		// the text box would overlap with the header button
-		clip-path: polygon(0% 20px, 100% 20px, 100% 100%, 0% 100%);
-	}
-
-	.tab-btn:hover {
-		// .tab-btn__tooltip:not(.tab-btn__tooltip--new) {
-		.tab-btn__tooltip {
-			clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%); // clip full box (hides box shadow)
-			display: block;
-			margin-top: 0;
-			opacity: 1;
+	.tab-btn--mobile-external {
+		svg {
+			line-height: 1;
+			width: 15px;
+			height: 15px;
+			fill: currentColor;
+			margin-right: 5px;
+			position: relative;
+			top: 1px;
 		}
 	}
-
-	.tab-btn__tooltip--new {
-		background-color: darken($color-g, 40);
-		box-shadow: 0 1px 10px 0px rgba($color-bl, 0.3);
-		clip-path: polygon(-50% 0px, 150% 0px, 150% 150%, -50% 150%); // allow box shadow below, but not above
-		color: darken($color-w, 40);
-		padding: 2px 10px;
-		display: block;
-		margin-top: 0;
-		opacity: 1;
-	}
-
-
-	// &--mobile-external //@todo
 
 	.tab-inner-fade {
 		opacity: .6;
@@ -236,6 +248,66 @@
 		}
 	}
 
+
+	// Tooltips
+	// ============================================================================
+
+	// *1: This clip path hides the el until it's hovered. Without this, the
+	// text box would overlap with the header button
+
+	.tab-tooltip {
+		background-color: #111213;
+		border-radius: 0 0 5px 5px;
+		clip-path: polygon(0% 20px, 100% 20px, 100% 100%, 0% 100%); // *1
+		font-family: $font-sans;
+		font-size: 1.2rem;
+		// left: 50%;
+		margin-top: -20px;
+		opacity: 0;
+		padding: 5px;
+		position: absolute;
+		text-align: center;
+		top: 100%;
+		// transform: translateX(-50%);
+		transition: 0.3s;
+		z-index: 1;
+
+		left: 0;
+		right: 0;
+
+		&--center {
+			left: 50%;
+			transform: translateX(-50%);
+			right: auto;
+		}
+	}
+
+	.tab-btn:hover {
+		.tab-tooltip {
+			clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%); // clip full box (hides box shadow)
+			display: block;
+			margin-top: 0;
+			opacity: 1;
+		}
+	}
+
+	// Bug: the text gets blurry when box-shadow is used on the main el if translateX is active
+	.tab-tooltip--new {
+		background-color: darken($color-g, 40);
+		box-shadow: none;
+		box-shadow: 0 1px 10px 0px rgba($color-bl, 0.3);
+		clip-path: polygon(-50% 0px, 150% 0px, 150% 150%, -50% 150%); // allow box shadow below, but not above
+		color: darken($color-w, 40);
+		display: block;
+		margin-top: 0;
+		opacity: 1;
+		padding: 2px 15px;
+	}
+
+
+	// Mobile Menu
+	// ============================================================================
+
 	.tab-submenu {
 		background-color: #1b1c1d;
 		border-top: 3px solid #1b1c1d;
@@ -257,6 +329,10 @@
 			margin: 0;
 		}
 	}
+
+
+	// Responsive
+	// ============================================================================
 
 	.bp-hide-below-medium {
 		@media (max-width: 1280px) {

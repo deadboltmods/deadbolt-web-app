@@ -94,12 +94,13 @@
 			</tbody>
 		</table>
 
-		<p>The function <code>draw_ctext( x, y, str )</code> is responsible for producing coloured text in the game. The values above are the pre-defined colours that are available for use. Many have been use don this site too.</p>
-
-		<p>
-			In-built GM colours:
-			<a href="https://docs.yoyogames.com/source/dadiospice/002_reference/drawing/colour%20and%20blending/">Colour And Blending</a>
-		</p>
+		<div class="styled-content">
+			<p>The function <code>draw_ctext( x, y, str )</code> is responsible for producing coloured text in the game. The values above are the pre-defined colours that are available for use. Many have been used on this site too.</p>
+			<p>
+				In-built GM colours:
+				<a href="https://docs.yoyogames.com/source/dadiospice/002_reference/drawing/colour%20and%20blending/">Colour And Blending</a>
+			</p>
+		</div>
 	</div>
 </template>
 

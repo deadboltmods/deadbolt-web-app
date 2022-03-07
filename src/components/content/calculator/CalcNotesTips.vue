@@ -5,7 +5,7 @@
 
 		<ul class="indent">
 			<li>You time is faster or equal to the par time (see <a href="#calc-partimes">table below</a> for all par times),</li>
-			<li>And your combined <span class="color-purple">shooting%</span> (accuracy% + headshots%) totals <code>90%</code> or above.</li>
+			<li>And your combined <span class="color-purple">shooting%</span> (accuracy% plus headshots%) totals <code>90%</code> or above.</li>
 		</ul>
 
 		<!---->
@@ -37,7 +37,7 @@
 
 		<p>The maximum combined total of accuracy% + headshots% is <code>150%</code> (eg. 100% accuracy and 50% headshots). Any amount past <code>150%</code> is ignored.</p>
 
-		<p>This means there's a <span class="color-r">hard cap</span> on the max time you can spend in a level, even if your <span class="color-purple">shooting%</span> is perfect.</p>
+		<p>This means there's a hard cap on the max time you can spend in a level, even if your <span class="color-purple">shooting%</span> is perfect. See the <span class="color-r">slowest times</span> in the <a href="#calc-partimes">Level Stats</a> table below for these times.</p>
 
 	</div>
 </template>

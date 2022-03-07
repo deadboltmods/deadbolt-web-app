@@ -9,11 +9,12 @@
 	import MDLinks from '@/markdown/resources/links.md'
 	import MDSpreadsheets from '@/markdown/resources/spreadsheets.md'
 	import MDDevBlog from '@/markdown/resources/devblog.md'
-	import MDCutContent from '@/markdown/resources/cut-content.md'
+	// import MDCutContent from '@/markdown/resources/cut-content.md'
 	// import MDEarlyDev from '@/markdown/resources/earlydev.md'
 	import Colors from '@/components/resources/Colors'
 	import DrawCtext from '@/components/resources/DrawCtext'
-import CutscenePortraits from '@/components/resources/CutscenePortraits'
+	import CutscenePortraits from '@/components/resources/CutscenePortraits'
+	import CutContent from '@/components/resources/CutContent'
 
 	export default {
 		name: 'Resources',
@@ -44,7 +45,7 @@ import CutscenePortraits from '@/components/resources/CutscenePortraits'
 					{
 						name: 'Unused Content',
 						anchor: 'cutcontent',
-						component: MDCutContent,
+						component: CutContent,
 						groupKey: 'dev'
 					},
 					// {
@@ -61,7 +62,7 @@ import CutscenePortraits from '@/components/resources/CutscenePortraits'
 						useStyledContentClass: true
 					},
 					{
-						name: 'draw_ctext',
+						name: 'Text Colours',
 						anchor: 'drawctext',
 						component: DrawCtext,
 						groupKey: 'misc',

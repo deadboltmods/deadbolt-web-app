@@ -1,3 +1,8 @@
+
+@todo: DEPRECATED, see: CutContent.vue
+
+---
+
 Collects concept art and unused sprites, often shared on Discord.
 
 ## Unused Sprites
@@ -12,11 +17,6 @@ Sprites that never made it into the game.
 ![](@/assets/images/resources/zombie-alts.gif)
 <div class="md-image-caption">
     Alternate zombie outfits and a chained dog
-</div>
-
-![](@/assets/images/resources/zombie-portraits.png)
-<div class="md-image-caption">
-    Zombie portraits
 </div>
 
 <!-- ![](@/assets/images/resources/vamp-costumes-x5.png) -->

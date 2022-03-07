@@ -9,3 +9,5 @@ Follow the same structure as shown in the DCP zip file's <span class="color-teal
 Here's an example of a sprite change to Punk, who uses a folder named `Zomb1`:
 
 ![](@/assets/images/screenshots/guides/custom-sprites-800.png)
+
+<em><span class="color-r">Warning:</span> There are currently issues with arm placement when using custom sprites. This will be addressed in a later update</em>.

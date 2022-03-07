@@ -1,9 +1,9 @@
 ## Buy DEADBOLT
 
-_Note: Mods are only supported for the Steam version._
+Note: DCP is only available for the Steam version. If you'd like a DRM-free version, buying from Humble gives you both a Steam key and a non-DRM build.
 
 - [Buy on Steam](https://store.steampowered.com/app/394970/DEADBOLT/)
-- [Buy on Humble](https://www.humblebundle.com/store/deadbolt) - Steam & DRM-free
+- [Buy on Humble](https://www.humblebundle.com/store/deadbolt)
 - [Buy on GOG](https://www.gog.com/game/deadbolt)
 - [Buy on Switch](https://www.nintendo.com/games/detail/deadbolt-switch/)
 - [Buy on PS4](https://www.playstation.com/en-us/games/deadbolt-ps4/)
@@ -12,12 +12,12 @@ _Note: Mods are only supported for the Steam version._
 
 - [Discord Server: Deadbolt](https://discord.gg/nw3Ad2c)
 - [Discord Server: Deadbolt Modding](https://discord.gg/8dqM6xDmrC)
-- [r/Deadbolt](https://www.reddit.com/r/Deadbolt/)
-- [Speedrun.com](https://www.speedrun.com/deadbolt)
 - [Steam - Guides](https://steamcommunity.com/app/394970/guides/)
 - [Steam - Workshop](https://steamcommunity.com/app/394970/workshop/)
 - [Wiki - Official](https://deadbolt.gamepedia.com/)
 - [Wiki - Unofficial](https://game-of-deadbolt.fandom.com/wiki/Game_of_Deadbolt_Wiki)
+- [Speedrun.com](https://www.speedrun.com/deadbolt)
+- [r/Deadbolt](https://www.reddit.com/r/Deadbolt/)
 - [Deviantart](https://www.deviantart.com/tag/deadbolt)
 
 ## Soundtrack by Chris Christodoulou

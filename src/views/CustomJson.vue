@@ -79,7 +79,7 @@
 					'Weapons': [
 						'showWeaponDescriptions',
 						'showWeaponStats',
-						'showUnusableWeapons',
+						// 'showUnusableWeapons',
 					],
 					'Misc': [
 						'showExtraData',

@@ -3,7 +3,7 @@
 		<section v-for="(settingGroup, settingGroupKey) in settings" :key="settingGroupKey" class="setting-group font-sans">
 			<h2 class="setting-group-heading">{{ settingGroupKey }}</h2>
 			<section v-for="setting in settingGroup" :key="setting" class="setting font-sans">
-				<label>
+				<label :title="( getSettingInfo( setting, 'hoverInfo' ) ) ?  getSettingInfo( setting, 'hoverInfo' ) : ''">
 					<div v-if="getSettingInfo( setting, 'type' ) === 'checkbox'">
 						<input type="checkbox" id="checkbox" @change="setCheckboxSetting( setting, $event )" :checked="getSetting( setting )">
 						{{ getSettingInfo( setting, 'description' ) }}
