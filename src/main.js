@@ -10,14 +10,19 @@ import '@/modules/registerServiceWorker'
 Vue.config.productionTip = false
 
 Vue.use(VueGtag, {
-  config: { id: "G-RZ7LPTDQ97" }
+	config: {
+		id: "G-RZ7LPTDQ97"
+	},
+	params: {
+		send_page_view: false
+	}
 });
 
 Vue.use(VueScrollactive);
 
 new Vue({
-  router,
-  store,
-  //meta,
-  render: h => h(App)
+	router,
+	store,
+	//meta,
+	render: h => h(App)
 }).$mount('#app')
