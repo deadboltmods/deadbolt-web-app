@@ -1,6 +1,6 @@
 ## Buy DEADBOLT
 
-Note: DCP is only available for the Steam version. If you'd like a DRM-free version, buying from Humble gives you both a Steam key and a non-DRM build.
+DCP is <span class="color-r">only available</span> for the Steam version. If you'd like a DRM-free version, buying from Humble gives you both a Steam key and a non-DRM build.
 
 - [Buy on Steam](https://store.steampowered.com/app/394970/DEADBOLT/)
 - [Buy on Humble](https://www.humblebundle.com/store/deadbolt)
@@ -27,9 +27,9 @@ Note: DCP is only available for the Steam version. If you'd like a DRM-free vers
 
 ## Official Sites
 
-- [playdeadbolt.com](http://playdeadbolt.com/)
 - [hopoogames.com](http://hopoogames.com/)
-- [hopoo.tumblr.com](https://hopoo.tumblr.com/) - Lots of insights & cut content
+- [hopoo.tumblr.com](https://hopoo.tumblr.com/) - Dev blog. Loads of insights & cut content
+- ~~[playdeadbolt.com](http://playdeadbolt.com/)~~
 
 ## Community Docs
 
@@ -38,13 +38,16 @@ Note: DCP is only available for the Steam version. If you'd like a DRM-free vers
 
 ## Deadbolt Misc
 
-- [Playable Demo](https://www.indiedb.com/games/deadbolt/downloads/deadbolt-demo)
+- [Playable Alpha Demo](https://www.indiedb.com/games/deadbolt/downloads/deadbolt-demo)
 - [Interview: Duncan Drummond Discusses DEADBOLT](https://techraptor.net/gaming/interview/duncan-drummond-discusses-deadbolt)
 
-## Tools
+## Modding Tools
 
-- [UndertaleModTool (UMT)](https://github.com/krzys-h/UndertaleModTool) - This tool that made modding possible
-- [Sprite viewer](https://yal.cc/r/17/yytextureview/) - Save sprites as single images or strips
+- [UndertaleModTool (UMT)](https://github.com/krzys-h/UndertaleModTool) - The tool that made modding possible
+- [UndertaleModTool-ExportToProjectScript](https://github.com/cubeww/UndertaleModTool-ExportToProjectScript) - Only works with UMT [v0.3.5.7](https://github.com/krzys-h/UndertaleModTool/releases/tag/0.3.5.7) or below. Use my [PR here](https://github.com/ithinkandicode/UndertaleModTool-ExportToProjectScript/tree/fix/12-colkind-BBoxMode)
+- [GameMaker Studio 1.4.1749](https://archive.org/download/GMStudio1.4.x/GMStudio-Installer-1.4.1749.exe) - Deadbolt's game engine and correct build version, via [archive.org](https://archive.org/details/GMStudio1.4.x)
+- [Deadbolt-GMS-Issues](https://github.com/ithinkandicode/Deadbolt-GMS-1.4-Misc/issues) - Github issues for running DB in GMS1.4 (don't add issues, it won't be seen)
+- [YAL Sprite viewer](https://yal.cc/r/17/yytextureview/) - Save sprites as single images or strips
 
 ## More from Hopoo Games
 
