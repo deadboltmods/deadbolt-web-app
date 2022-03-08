@@ -1,7 +1,9 @@
 <template>
 	<nav class="tabs tabs--2col">
 		<ul class="tab-btns tab-btns--left">
+
 			<!-- Main Links (always shown) -->
+
 			<li>
 				<router-link class="tab-btn" to="/" exact>
 					<div class="tab-btn__svg">
@@ -13,31 +15,16 @@
 			<li><router-link class="tab-btn color-teal" to="/decp">DECP</router-link></li>
 
 			<!-- Desktop Only -->
-			<li class="bp-wide-only">
-				<router-link class="tab-btn color-y" to="/config/customjson">
-					<div class="bp-hide-below-medium">
-						Level Config
+			<li v-for="(link, linkIndex) in mainLinks" :key="'mainlink' + linkIndex" :class="link.hideOnMobile ? 'bp-wide-only' : ''">
+				<router-link class="tab-btn" :class="link.colorCls" :to="link.route">
+					<div class="bp-hide-below-medium" v-if="!link.iconOnly">
+						{{ link.name }}
+						<div v-if="link.isNew" class="tab-tooltip tab-tooltip--new">NEW!</div>
 					</div>
-					<div class="tab-btn__svg bp-hide-above-medium">
-						<inline-svg :src="require('@/assets/svg/material-icons/mi-construction.svg')"/>
-						<div class="tab-tooltip">Level Config</div>
-					</div>
-				</router-link>
-			</li>
-
-			<li class="bp-wide-only"><router-link class="tab-btn" to="/guides">Guides</router-link></li>
-			<li class="bp-wide-only"><router-link class="tab-btn" to="/settings">Settings</router-link></li>
-			<li class="bp-wide-only"><router-link class="tab-btn" to="/resources">Resources</router-link></li>
-			<li class="bp-wide-only">
-				<router-link class="tab-btn" to="/stars-calculator">
-					<div class="bp-hide-below-medium">
-						Stars Calculator
-						<div class="tab-tooltip tab-tooltip--new tab-tooltip--center">NEW!</div>
-					</div>
-					<div class="tab-btn__svg bp-hide-above-medium">
-						<inline-svg :src="require('@/assets/svg/material-icons/mi-star.svg')"/>
-						<div class="tab-tooltip tab-tooltip--new">NEW!</div>
-						<div class="tab-tooltip tab-tooltip--center">Stars Calculator</div>
+					<div class="tab-btn__svg" :class="(!link.iconOnly) ? 'bp-hide-above-medium' : ''">
+						<inline-svg :src="require('@/assets/svg/' + link.svgIcon)"/>
+						<div v-if="link.isNew" class="tab-tooltip tab-tooltip--new">NEW!</div>
+						<div class="tab-tooltip" :class="link.centerTooltip ? 'tab-tooltip--center' : ''">{{ link.name }}</div>
 					</div>
 				</router-link>
 			</li>
@@ -113,6 +100,59 @@
 		data() {
 			return {
 				websiteUrls: websiteUrls,
+				mainLinks: [
+					{
+						name: 'Level Config',
+						route: '/config/customjson',
+						colorCls: 'color-y',
+						svgIcon: 'material-icons/mi-construction.svg',
+						centerTooltip: false,
+						isNew: false,
+						iconOnly: true,
+						hideOnMobile: true,
+					},
+					{
+						name: 'Guides',
+						route: '/guides',
+						colorCls: '',
+						svgIcon: 'material-icons/mi-help.svg',
+						centerTooltip: false,
+						isNew: false,
+						iconOnly: true,
+						hideOnMobile: true,
+					},
+					{
+						name: 'Settings',
+						route: '/settings',
+						colorCls: '',
+						svgIcon: 'material-icons/mi-settings.svg',
+						centerTooltip: false,
+						isNew: false,
+						iconOnly: true,
+						hideOnMobile: true,
+					},
+					{
+						name: 'Resources',
+						route: '/resources',
+						colorCls: '',
+						svgIcon: 'material-icons/mi-document.svg',
+						centerTooltip: true,
+						isNew: false,
+						iconOnly: true,
+						hideOnMobile: true,
+					},
+					{
+						name: 'Stars Calculator',
+						route: '/stars-calculator',
+						colorCls: '',
+						svgIcon: 'material-icons/mi-star.svg',
+						centerTooltip: true,
+						isNew: true,
+						// isNew: false,
+						iconOnly: true,
+						hideOnMobile: true,
+					}
+				],
 			}
 		},
 		components: {
