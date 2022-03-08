@@ -9,8 +9,8 @@
 	import MDLinks from '@/markdown/resources/links.md'
 	import MDSpreadsheets from '@/markdown/resources/spreadsheets.md'
 	import MDDevBlog from '@/markdown/resources/devblog.md'
-	// import MDCutContent from '@/markdown/resources/cut-content.md'
-	// import MDEarlyDev from '@/markdown/resources/earlydev.md'
+	// import MDDevBlogFull from '@/markdown/resources/devblog-full-wip.md'
+	import MDEarlyDev from '@/markdown/resources/earlydev.md'
 	import Colors from '@/components/resources/Colors'
 	import DrawCtext from '@/components/resources/DrawCtext'
 	import CutscenePortraits from '@/components/resources/CutscenePortraits'
@@ -42,18 +42,24 @@
 						component: MDDevBlog,
 						groupKey: 'dev'
 					},
+					// {
+					// 	name: 'Dev Blog - Extracts',
+					// 	anchor: 'devblog-full',
+					// 	component: MDDevBlogFull,
+					// 	groupKey: 'dev'
+					// },
 					{
 						name: 'Unused Content',
 						anchor: 'cutcontent',
 						component: CutContent,
 						groupKey: 'dev'
 					},
-					// {
-					// 	name: 'Early Dev',
-					// 	anchor: 'earlydev',
-					// 	component: MDEarlyDev,
-					// 	groupKey: 'dev'
-					// },
+					{
+						name: 'Early Dev',
+						anchor: 'earlydev',
+						component: MDEarlyDev,
+						groupKey: 'dev'
+					},
 					{
 						name: 'Cutscene Portraits',
 						anchor: 'cutsceneportraits',
@@ -62,17 +68,17 @@
 						useStyledContentClass: true
 					},
 					{
+						name: 'Colour Palette',
+						anchor: 'colors',
+						component: Colors,
+						groupKey: 'misc'
+					},
+					{
 						name: 'Text Colours',
 						anchor: 'drawctext',
 						component: DrawCtext,
 						groupKey: 'misc',
 						useStyledContentClass: false
-					},
-					{
-						name: 'Colour Palette',
-						anchor: 'colors',
-						component: Colors,
-						groupKey: 'misc'
 					},
 				],
 				groupKeys:

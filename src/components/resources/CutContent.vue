@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="md-gallery md-gallery--align-bottom md-gallery--spacious">
-			<div><img src="@/assets/images/resources/art-assets/reaper_teleport--join.gif" width="200"></div>
+			<div><img src="@/assets/images/resources/art-assets/reaper_teleport--join-crop.gif" width="200"></div>
 			<div><img src="@/assets/images/resources/art-assets/vamp1_dance1_old--crop.gif" width="90"></div>
 			<div><img src="@/assets/images/resources/art-assets/zombieboss1_threaten--joined.gif" width="210"></div>
 		</div>
