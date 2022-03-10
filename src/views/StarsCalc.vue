@@ -17,6 +17,7 @@
 
 	export default {
 		name: 'StarsCalc',
+		title: 'Stars Calculator | Deadbolt Game Mods',
 		components: {
 			ContentWithSidebar,
 		},

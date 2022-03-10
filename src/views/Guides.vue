@@ -15,7 +15,8 @@
 	// import MDIcon from '@/markdown/guides/dcp-icon.md'
 
 	export default {
-		name: 'Resources',
+		name: 'Guides',
+		title: 'Guides | Deadbolt Game Mods',
 		components: {
 			ContentWithSidebar,
 		},

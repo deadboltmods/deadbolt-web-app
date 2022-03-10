@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<p>Concept art and unused sprites, often shared on Discord.</p>
+		<div class="text-center">
+			<p>Concept art and unused sprites, often shared on Discord.</p>
 
-		<h2>Unused Sprites</h2>
+			<h2>Unused Sprites</h2>
 
-		<p>Sprites that never made it into the game.</p>
+			<p>Sprites that never made it into the game, from <a target="_blank" href="https://hopoo.tumblr.com/">Hopoo's blog</a>.</p>
+		</div>
 
 		<img src="@/assets/images/resources/character-concepts.png">
 		<div class="md-image-caption">

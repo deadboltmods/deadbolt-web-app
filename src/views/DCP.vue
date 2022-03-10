@@ -24,6 +24,7 @@
 
 	export default {
 		name: 'About',
+		title: 'DCP - Deadbolt Community Patch',
 		components: {
 			ContentWithSidebar
 		},

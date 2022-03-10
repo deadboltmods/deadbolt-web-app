@@ -12,7 +12,8 @@
 	import SettingsDECP from '@/components/content/settings/SettingsDECP'
 
 	export default {
-		name: 'Resources',
+		name: 'Settings',
+		title: 'Config Settings | Deadbolt Game Mods',
 		components: {
 			ContentWithSidebar,
 		},

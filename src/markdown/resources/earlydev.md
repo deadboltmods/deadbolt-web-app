@@ -1,5 +1,5 @@
 
-## Early Development
+## First Look
 
 Early GIFs, via [this post](https://hopoo.tumblr.com/post/95718245464/weekend-project-for-fun-some-basic-stuff-in)
 
@@ -8,6 +8,8 @@ Early GIFs, via [this post](https://hopoo.tumblr.com/post/95718245464/weekend-pr
 ![](@/assets/images/resources/early-1/1-level.png)
 ![](@/assets/images/resources/early-1/2-knock.gif)
 ![](@/assets/images/resources/early-1/3-shoot.gif)
+
+## Second Preview
 
 The second round of early GIFs, via [this post](https://hopoo.tumblr.com/post/99372878709/while-ror-finishes-up-on-the-linuxmac-end-i)
 
@@ -19,6 +21,8 @@ The second round of early GIFs, via [this post](https://hopoo.tumblr.com/post/99
 ![](@/assets/images/resources/early-2/early-b-2.gif)
 ![](@/assets/images/resources/early-2/early-b-3.gif)
 ![](@/assets/images/resources/early-2/early-b-4.gif)
+
+## Scrapped Mechanics
 
 Unused concepts, via [this post](https://hopoo.tumblr.com/post/151410803289/what-ideas-did-you-scrapped-while-being-on-the-way).
 

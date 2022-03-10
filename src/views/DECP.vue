@@ -14,6 +14,7 @@
 
 	export default {
 		name: 'DECP',
+		title: 'DECP - Deadbolt Editor Community Patch',
 		components: {
 			ContentWithSidebar,
 		},

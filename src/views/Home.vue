@@ -31,6 +31,7 @@
 <script>
 	export default {
 		name: 'Home',
+		title: 'DCP + DECP | Deadbolt Game Mods',
 	}
 </script>
 
@@ -87,7 +88,7 @@
 		color: #1EC4F6;
 		position: relative;
 		opacity: 0;
-		animation-delay: 60s;
+		animation-delay: 120s;
 		animation-duration: 5s;
 		animation-fill-mode: forwards;
 		animation-iteration-count: 1;

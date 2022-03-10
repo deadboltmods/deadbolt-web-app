@@ -51,11 +51,38 @@ const routes = [
 		component: () => import( '@/views/Resources.vue' ),
 	},
 
+	// Links
+	{
+		path: '/links',
+		name: 'links',
+		component: () => import( '@/views/Links.vue' ),
+	},
+
+	// Images
+	{
+		path: '/images',
+		name: 'images',
+		component: () => import( '@/views/Images.vue' ),
+	},
+
 	// Stars Calculator
 	{
 		path: '/stars-calculator',
 		name: 'stars-calculator',
 		component: () => import( '@/views/StarsCalc.vue' ),
+		meta: {
+			title: 'Stars Calculator',
+			metaTags: [
+			{
+				name: 'description',
+				content: 'Calculate your stars, based on your time and shooting %'
+			},
+			{
+				property: 'og:description',
+				content: 'Calculate your stars, based on your time and shooting %'
+			}
+			]
+		},
 	},
 ]
 
