@@ -1,6 +1,6 @@
 <template>
 	<div class="intro-content centered-content">
-		<p>Use this app to calculate your star rank.</p>
+		<p>Use this tool to calculate your star rank.</p>
 		<p>There are tips below, and a table showing all par times.</p>
 		<p><span class="color-teal">Tip:</span> Click an input field and use the arrow keys<br>to make quick changes.</p>
 	</div>

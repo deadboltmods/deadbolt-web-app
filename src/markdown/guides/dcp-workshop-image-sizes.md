@@ -6,7 +6,8 @@ They <span class="color-r">must be</span> square, and <span class="color-r">must
 
 Here's a demo at `268` x `268`. You can use larger images but the picture quality will be lower.
 
-![](@/assets/images/resources/workshop-sizes/promo.jpg)
+<!-- ![](@/assets/images/resources/workshop-sizes/promo.jpg) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/resources/workshop-sizes/promo.jpg)
 
 ## Gallery
 
@@ -14,4 +15,5 @@ These are the wide images used in your workshop item's gallery. They are uploade
 
 They should be `637` x `358`
 
-![](@/assets/images/resources/workshop-sizes/gallery.jpg)
+<!-- ![](@/assets/images/resources/workshop-sizes/gallery.jpg) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/resources/workshop-sizes/gallery.jpg)

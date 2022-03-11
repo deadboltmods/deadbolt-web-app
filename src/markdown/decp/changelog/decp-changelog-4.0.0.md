@@ -10,7 +10,8 @@ Drag with `LMB` to draw a rectangle around objects. Objects within your rectangl
 
 Filter selectable objects with the new sidebar buttons. Hover over them to see what they do.
 
-![](@/assets/images/screenshots/decp/4.0.0/filter.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/filter.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/filter.png)
 
 ### Move
 
@@ -20,7 +21,8 @@ Drag the selection with `RMB` to move its objects.
 
 Press `Ctrl`+ `C` to copy all objects within the selection. A new selection will be created, containing your copied objects.
 
-![](@/assets/images/screenshots/decp/4.0.0/copy.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/copy.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/copy.png)
 
 ### Delete
 
@@ -28,7 +30,8 @@ Delete selected objects by pressing `DEL` to initiate delete mode, then `DEL` ag
 
 To cancel a delete after pressing `DEL`, press `RMB`.
 
-![](@/assets/images/screenshots/decp/4.0.0/delete-x2.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/delete-x2.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/delete-x2.png)
 
 ### Hide Boxes
 
@@ -60,7 +63,8 @@ Colours are grouped into sets of 4. The first in a set is dark, then vibrant, th
 
 Wallpaper (`oWallpaper` + `oWallpaperFront`) can be blended with any of the new colours. The screenshot below shows how every wallpaper looks with each colour option.
 
-![](@/assets/images/screenshots/decp/4.0.0/wall-colors-800.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/wall-colors-800.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/wall-colors-800.png)
 
 ### oPartyLight
 
@@ -74,7 +78,8 @@ The default alpha is `0.6` (60% opaque, or 40% transparent). It can be set anywh
 
 As well as setting the water colour for `oWater`, you can also set the height. DECP will preview how the water will look in the game.
 
-![](@/assets/images/screenshots/decp/4.0.0/owater-gutter-sludge-alt.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/owater-gutter-sludge-alt.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/owater-gutter-sludge-alt.png)
 
 If you set the height of an `oWater` object to match the level height, it will completely cover the level and tinge it with your chosen water colour.
 
@@ -96,7 +101,8 @@ The "upload a zip" message now mentions the above, and also mentions that updati
 
 18 new cutscene portraits, including more cut development art, previously innaccessible sprites, and original work by [Nintee](https://steamcommunity.com/id/Nintee/images/?appid=394970) and [Classic_Cheese18](https://steamcommunity.com/sharedfiles/filedetails/?id=1954829541).
 
-![](@/assets/images/screenshots/decp/4.0.0/portraits.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/portraits.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/portraits.png)
 
 View all the cutscene portraits in the new [Cutscene Portraits](/resources#cutsceneportraits) section in Resources.
 
@@ -115,7 +121,8 @@ In this release, DECP adds a few improvements to make it easier to use:
 - The depth is fixed so it's not hidden behind vents
 - The object itself no longer disappears if you load a saved level that uses it
 
-![](@/assets/images/screenshots/decp/4.0.0/odetector.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/odetector.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/odetector.png)
 
 There are a lot of possibilities with this object, with lots of options for alternate strategies and AI manipulation.
 
@@ -127,7 +134,8 @@ Elevator buttons (`oElevator1Button`) can now be assigned to different elevators
 
 This lets you create levels with multiple elevator routes. These levels will work in vanilla.
 
-![](@/assets/images/screenshots/decp/4.0.0/elevator-button.png)
+<!-- ![](@/assets/images/screenshots/decp/4.0.0/elevator-button.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/decp/4.0.0/elevator-button.png)
 
 New elevator buttons now try their best to be assigned to their nearest elevator.
 

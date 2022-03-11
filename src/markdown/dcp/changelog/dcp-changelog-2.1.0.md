@@ -4,13 +4,15 @@ This update improves on the "Load Custom" screen, finishes the new console weapo
 
 The Load Custom screen has been overhauled. It now shows creator names and tracks your best stats.
 
-![](@/assets/images/screenshots/dcp/2.1.0/oLoadCustom-crop.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.1.0/oLoadCustom-crop.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.1.0/oLoadCustom-crop.png)
 
 It also keeps track of levels you've started but not finished. This is shown in the UI with blue stars, as seen above for _Back with a Vengeance_.
 
 Descriptions are also available, letting you read the full backstory for each custom mission. Toggle the infobox with RMB.
 
-![](@/assets/images/screenshots/dcp/2.1.0/oLoadCustom-infobox.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.1.0/oLoadCustom-infobox.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.1.0/oLoadCustom-infobox.png)
 
 ### Saved Stat Details
 
@@ -35,7 +37,8 @@ Two other fixes have been made:
 
 You can now replace Reaper's default chat portrait with a version using his cover skull, with the option `alt_reaperportrait`. It's enabled by default. This was an old community suggestion that I was very happy to get to.
 
-![](@/assets/images/screenshots/dcp/2.1.0/reaper-icon-alt-2-custom.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.1.0/reaper-icon-alt-2-custom.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.1.0/reaper-icon-alt-2-custom.png)
 
 Additionally, new chat portraits have been added for custom cutscenes:
 
@@ -49,7 +52,8 @@ Additionally, new chat portraits have been added for custom cutscenes:
 
 Reaper's apartment rack now shows the 2 new buyable weapons, Compound Crossbow + Landmine.
 
-![](@/assets/images/screenshots/dcp/2.1.0/apt-rack-complete-x2.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.1.0/apt-rack-complete-x2.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.1.0/apt-rack-complete-x2.png)
 
 Buying a weapon from Charon now spawns your new weapon, so you can try it out immediately.
 
@@ -67,4 +71,5 @@ The issue with slope collisions that's been part of DCP from the start has now b
 
 And last but <span class="color-g">by no means least</span> - smoke invulnerability frames now work against melee!
 
-![](@/assets/images/screenshots/dcp/2.1.0/smoke-invuln-frames.gif)
+<!-- ![](@/assets/images/screenshots/dcp/2.1.0/smoke-invuln-frames.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.1.0/smoke-invuln-frames.gif)

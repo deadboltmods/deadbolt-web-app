@@ -21,7 +21,7 @@
 	`;
 
 	export default {
-		name: 'Custom Json',
+		name: 'CustomJson',
 		title: 'Build custom.json | Deadbolt Game Mods',
 		components: {
 			ContentWithSidebar

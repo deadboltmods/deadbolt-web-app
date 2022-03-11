@@ -65,6 +65,20 @@ const routes = [
 		component: () => import( '@/views/Images.vue' ),
 	},
 
+	// News & Updates
+	{
+		path: '/news',
+		name: 'news',
+		component: () => import( '@/views/News.vue' ),
+	},
+
+	// DevBlog Explorer
+	{
+		path: '/devblog-explorer',
+		name: 'devblog-explorer',
+		component: () => import( '@/views/DevBlog.vue' ),
+	},
+
 	// Stars Calculator
 	{
 		path: '/stars-calculator',

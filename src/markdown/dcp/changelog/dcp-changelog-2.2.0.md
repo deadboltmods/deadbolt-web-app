@@ -12,7 +12,8 @@ New balance updates bring the Burst Pistol closer a fully-realised weapon, and m
 
 This gives the Burst Pistol the accuracy it needed to land multiple headshots in a single burst. The increased delay makes it feel more distinct from the Burst Rifle (which has a faster _4 frames_ between shots), and gives it more versatility: In a single burst, you can can line up a double headshot, or if you're quick enough, take out an enemy and a light all at once.
 
-![](@/assets/images/screenshots/dcp/2.2.0/oBPistol.gif)
+<!-- ![](@/assets/images/screenshots/dcp/2.2.0/oBPistol.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.2.0/oBPistol.gif)
 
 To use the Burst Pistol in your own custom levels, generate a <span class="color-purple">custom.json</span> with the [Level Config](https://deadbolt.codemuffin.com/config/customjson), or add it to the level with `oBPistol`. It's available in DECP, but because it used to crash the game, you'll need to enable `sidebar_showbadobjects=1` in <span class="color-purple">DECP.ini</span> to see it in the Weapons sidebar.
 
@@ -24,7 +25,8 @@ These stats are already moddable for all weapons: `dmg`, `frames`, `hs_multi`, `
 
 For an overview of all weapon stats and their vanilla values, see the [Deadbolt Master Data spreadsheet](https://docs.google.com/spreadsheets/d/1qRyF3laHK2bKYyI552aA5PElzib8ak1FfLNxDId9Lzg/edit#gid=482879943).
 
-![](@/assets/images/screenshots/dcp/2.2.0/sBPistolPickup-large.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.2.0/sBPistolPickup-large.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.2.0/sBPistolPickup-large.png)
 
 ## New Object Properties
 
@@ -34,7 +36,8 @@ Pin count can now be set with var1. The default is 20. The minimum is 1 (if 0, i
 
 Safes can also now be unlocked from the start with var2. The default is `0` (not unlocked), use `1` for unlocked. Unlocked safes are visual only and **cannot** be used as objectives.
 
-![](@/assets/images/screenshots/dcp/2.2.0/oSafe1-pincount.gif)
+<!-- ![](@/assets/images/screenshots/dcp/2.2.0/oSafe1-pincount.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.2.0/oSafe1-pincount.gif)
 
 ### oWater
 
@@ -46,7 +49,8 @@ There are 11 colours to choose from. They're in the same order as the latest oPa
 
 You can stack oWater blocks for very dark levels, or use full-height blocks for constant atmospheric light.
 
-![](@/assets/images/screenshots/dcp/2.2.0/oWater-color.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.2.0/oWater-color.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.2.0/oWater-color.png)
 
 ### oCandleIdle2
 
@@ -61,4 +65,5 @@ This is a new object that uses an existing sprite, `oCandleIdle2` has the sprite
 - Fixed laser sight being orange on headshot hovers (the other new red variants have been kept)
 
 ##
-![](@/assets/images/screenshots/dcp/2.2.0/sCandleIdle2-large.png)
+<!-- ![](@/assets/images/screenshots/dcp/2.2.0/sCandleIdle2-large.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/2.2.0/sCandleIdle2-large.png)

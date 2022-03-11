@@ -6,15 +6,19 @@
 
 <script>
 	import ContentWithSidebar from '@/components/ContentWithSidebar'
-	// import MDLinksOfficial from '@/markdown/resources/links-official.md'
-	// import MDLinks from '@/markdown/resources/links.md'
-	// import MDSpreadsheets from '@/markdown/resources/spreadsheets.md'
-	// import MDDevBlog from '@/markdown/resources/devblog.md'
-	import MDEarlyDev from '@/markdown/resources/earlydev.md'
-	// import Colors from '@/components/resources/Colors'
-	// import DrawCtext from '@/components/resources/DrawCtext'
-	import CutContent from '@/components/resources/CutContent'
 	import CutscenePortraits from '@/components/resources/CutscenePortraits'
+
+	// Hopoo - Sprites
+	import CutSpritesGrouped from '@/components/hopoo/CutSpritesGrouped'
+	import CutSpritesSingle from '@/components/hopoo/CutSpritesSingle'
+	import CutTilesets from '@/components/hopoo/CutTilesets'
+	import CutSpritesBackgrounds from '@/components/hopoo/CutSpritesBackgrounds'
+
+	// Hopoo - Blog
+	// import MDEarlyDev from '@/markdown/resources/earlydev.md'
+	import MDEarlyDev1 from '@/markdown/hopoo/earlydev-1.md'
+	import MDEarlyDev2 from '@/markdown/hopoo/earlydev-2.md'
+	import MDEarlyDev3 from '@/markdown/hopoo/earlydev-3.md'
 
 	export default {
 		name: 'Images',
@@ -30,32 +34,76 @@
 						hideFromSidebar: true,
 						specialHeading: true,
 					},
-
 					{
 						name: 'Cutscene Portraits',
-						anchor: 'cutsceneportraits',
+						anchor: 'cutscene-portraits',
 						component: CutscenePortraits,
 						groupKey: 'general',
 						useStyledContentClass: true
 					},
 
+
+
 					{
-						name: 'Unused Content',
-						anchor: 'cutcontent',
-						component: CutContent,
-						groupKey: 'dev'
+						name: 'Unused Dev Art',
+						hideFromSidebar: true,
+						specialHeading: true,
 					},
 					{
-						name: 'Early Dev',
-						anchor: 'earlydev',
-						component: MDEarlyDev,
-						groupKey: 'dev'
+						name: 'Grouped',
+						anchor: 'grouped-sprites',
+						component: CutSpritesGrouped,
+						groupKey: 'dev1'
+					},
+					{
+						name: 'Sprites',
+						anchor: 'single-sprites',
+						component: CutSpritesSingle,
+						groupKey: 'dev1'
+					},
+					{
+						name: 'Tilesets',
+						anchor: 'tilesets',
+						component: CutTilesets,
+						groupKey: 'dev1'
+					},
+					{
+						name: 'Backgrounds',
+						anchor: 'backgrounds',
+						component: CutSpritesBackgrounds,
+						groupKey: 'dev1'
+					},
+
+					// Hopoo Previews
+					{
+						name: 'Hopoo Previews',
+						hideFromSidebar: true,
+						specialHeading: true,
+					},
+					{
+						name: 'First Look',
+						anchor: 'earlydev-1',
+						component: MDEarlyDev1,
+						groupKey: 'dev2'
+					},
+					{
+						name: 'Second Preview',
+						anchor: 'earlydev-2',
+						component: MDEarlyDev2,
+						groupKey: 'dev2'
+					},
+					{
+						name: 'Scrapped Ideas',
+						anchor: 'earlydev-3',
+						component: MDEarlyDev3,
+						groupKey: 'dev2'
 					},
 				],
 				groupKeys:
 				{
 					general: 'General',
-					dev: 'Hopoo Dev',
+					dev1: 'Unused Dev Art',
+					dev2: 'Hopoo Previews',
 				}
 			}
 		},

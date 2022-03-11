@@ -20,7 +20,8 @@ It's also been upgraded with lots of special features:
 
 It's a primary and costs `120` souls. It's also way OP, so try it before it gets nerfed!
 
-![](@/assets/images/screenshots/dcp/3.0.0/sickle-bounce-catch.gif)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/sickle-bounce-catch.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/sickle-bounce-catch.gif)
 
 ### Tac. Knife + Pistol
 
@@ -38,7 +39,8 @@ It also fires slightly faster now, and has a higher headshot multipler.
 
 ##
 
-![](@/assets/images/screenshots/dcp/3.0.0/rack.png)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/rack.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/rack.png)
 
 ## Weapon Mods
 
@@ -50,7 +52,8 @@ Changes the Tactical SMG's laser sight colour, depending on what's in your line 
 
 The laser sight aiming has also been fixed, so its path correctly follows the cursor.
 
-![](@/assets/images/screenshots/dcp/3.0.0/laser-sight-colors.png)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/laser-sight-colors.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/laser-sight-colors.png)
 
 ### Scythe Bullet Deflect
 
@@ -58,7 +61,8 @@ A cut mechanic, this mod lets you deflect bullets with the Scythe. Just aim and 
 
 The cooldown is roughly equal to the Scythe's slash. The window to deflect is very narrow, only lasting as long as the Reaper's spin lasts.
 
-![](@/assets/images/screenshots/dcp/3.0.0/scythe-deflect.gif)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/scythe-deflect.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/scythe-deflect.gif)
 
 You can enable a sound cue to play when the deflect cooldown is over in with the option `weapon_scythe_deflect_ready_sound` in <span class="color-purple">globalconfig.json</span>.
 
@@ -70,7 +74,8 @@ Another cut mechanic. Scoring a headshot with the Headhunter creates a fire (`oE
 
 The fire created by `oEfBulletRefund` has been changed to match the Headhunter's colours, and SFX has been added when a bullet is refunded.
 
-![](@/assets/images/screenshots/dcp/3.0.0/headhunter-bullet-refund.gif)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/headhunter-bullet-refund.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/headhunter-bullet-refund.gif)
 
 Similar to the Compound Crossbow and Tac. Knife, if you drop an empty Headhunter while a refund fire exists, you'll still be able to pick it up again.
 
@@ -110,7 +115,8 @@ The structure of the weapons config file <span class="color-purple">weapons.json
 
 Mark favourites on the Load Custom screen with `MMB`, and press `Home` to scroll to the first local level. These controls now appear in the corner of the screen.
 
-![](@/assets/images/screenshots/dcp/3.0.0/load-custom-faves.png)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/load-custom-faves.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/load-custom-faves.png)
 
 Custom local level filesnames are much longer, and hovered level names are now lighter.
 
@@ -133,7 +139,8 @@ There are new options for objects affected by colour too:
 
 See the changelog for DECP 4.0.0 for full details.
 
-![](@/assets/images/screenshots/dcp/3.0.0/color-room-blue.png)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/color-room-blue.png) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/color-room-blue.png)
 
 ## Cursor Mods
 
@@ -164,7 +171,8 @@ Quick restart hotkey: `F4`. This is very useful when making local maps, as they 
 
 Elevators can now open doors on both sides.
 
-![](@/assets/images/screenshots/dcp/3.0.0/elevator-doors.gif)
+<!-- ![](@/assets/images/screenshots/dcp/3.0.0/elevator-doors.gif) -->
+![](https://files.codemuffin.com/deadbolt/cdn/assets/images/screenshots/dcp/3.0.0/elevator-doors.gif)
 
 The custom cutscene object available in the editor has more cutscene portraits, including more cut dev art and custom sprites by Nintee and Classic_Cheese. Voice SFX for Cerberus have also been added.
 

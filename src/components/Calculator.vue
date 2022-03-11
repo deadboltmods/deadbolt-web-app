@@ -120,7 +120,7 @@
 						<div class="note-row__value">{{ roundDecimals( calculateTimeScore().score, 5, true ) }}</div>
 					</div>
 					<div class="note-row note-row--warning" v-if="(getTimeDiff() < 0) && getCurrentTimeInSec() !== 0">
-						<span class="color-dk">Note: Beating the par time won't increase your stars any further. The time score maxes out at 1.</span>
+						Note: Beating the par time won't increase your stars any further. The time score maxes out at 1.
 					</div>
 				</div>
 			</div>
@@ -152,7 +152,7 @@
 						<div class="note-row__value">{{ roundDecimals( calculateShootingScore().score, 5, true ) }}</div>
 					</div>
 					<div class="note-row note-row--warning" v-if="getShootingPercent() > 150">
-						<span class="color-dk">Note: Shooting score has a max of 1.5 (ie. 150% is the maximum counted total of accuracy% plus headshots%).</span>
+						Note: Shooting score has a max of 1.5 (ie. 150% is the maximum counted total of accuracy% plus headshots%).
 					</div>
 				</div>
 			</div>
@@ -185,7 +185,7 @@
 
 					<div class="note-row">
 						<div class="note-row__label">Stars</div>
-						<div class="note-row__value">{{ getStarsCount() }}</div>
+						<div class="note-row__value color-y">{{ getStarsCount() }}</div>
 					</div>
 				</div>
 			</div>
@@ -832,8 +832,9 @@
 		display: flex;
 
 		&--warning {
-			margin-top: 10px;
+			color: darken($color-r, 30);
 			font-size: 16px;
+			margin-top: 10px;
 		}
 	}
 

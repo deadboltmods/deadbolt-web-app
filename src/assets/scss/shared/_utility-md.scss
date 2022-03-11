@@ -7,9 +7,20 @@
 
 .md-image-caption {
 	text-align: center;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	margin-top: -10px;
 	margin-bottom: 30px;
+	// font-style: italic;
+}
+
+.md-image-hover {
+	img {
+		transition: 0.4s;
+
+		&:hover {
+			background-color: rgba(white, 0.3) !important;
+		}
+	}
 }
 
 .md-gallery {
@@ -17,6 +28,10 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+
+	img {
+		margin-bottom: 10px;
+	}
 
 	> * {
 		margin: 0 10px;

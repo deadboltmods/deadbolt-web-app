@@ -1,6 +1,6 @@
 <template>
 	<div class="intro-content centered-content">
-		<p>Use this app to create a <span class="color-purple">custom.json</span> file.</p>
+		<p>Use this tool to create a <span class="color-purple">custom.json</span> file.</p>
 
 		<p>
 			Put the file in your <span class="color-teal">Levels</span> folder<br>

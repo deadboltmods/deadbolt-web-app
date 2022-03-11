@@ -9,6 +9,7 @@
 	import MDLinksOfficial from '@/markdown/resources/links-official.md'
 	import MDDevBlog from '@/markdown/resources/devblog.md'
 	import MDLinks from '@/markdown/resources/links.md'
+	import MDModding from '@/markdown/resources/links-modding.md'
 	import MDSpreadsheets from '@/markdown/resources/spreadsheets.md'
 
 	export default {
@@ -32,15 +33,15 @@
 						groupKey: 'links'
 					},
 					{
-						name: 'Dev Blog',
-						anchor: 'links-devblog',
-						component: MDDevBlog,
-						groupKey: 'links'
-					},
-					{
 						name: 'Community',
 						anchor: 'links-community',
 						component: MDLinks,
+						groupKey: 'links'
+					},
+					{
+						name: 'Dev Blog',
+						anchor: 'links-devblog',
+						component: MDDevBlog,
 						groupKey: 'links'
 					},
 
@@ -50,11 +51,19 @@
 						component: MDSpreadsheets,
 						groupKey: 'data'
 					},
+
+					{
+						name: 'Modding',
+						anchor: 'links-modding',
+						component: MDModding,
+						groupKey: 'modding'
+					},
 				],
 				groupKeys:
 				{
 					links: 'Links',
 					data: 'Data',
+					modding: 'Modding',
 				}
 			}
 		},
