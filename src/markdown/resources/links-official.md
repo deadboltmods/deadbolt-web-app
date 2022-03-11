@@ -14,10 +14,13 @@ DCP is <span class="color-r">only available</span> for the Steam version. If you
 - [hopoo.tumblr.com](https://hopoo.tumblr.com/) - Dev blog. Loads of insights & cut content
 - [Posts on Tigsource](https://forums.tigsource.com/index.php?topic=45642.0) - Very early discussions on the game by Hopoo ([pg1](https://forums.tigsource.com/index.php?topic=45642.0), [pg2](https://forums.tigsource.com/index.php?topic=45642.20), [pg3](https://forums.tigsource.com/index.php?topic=45642.40))
 - [Interview: Duncan Drummond Discusses DEADBOLT](https://techraptor.net/gaming/interview/duncan-drummond-discusses-deadbolt)
+- [Trailer 1: Debut](https://www.youtube.com/watch?v=WX2HGR1owiQ)
+- [Trailer 2: Consoles](https://www.youtube.com/watch?v=4uO-XL3T9Ug)
 
 ## Hopoo Games
 
 - [hopoogames.com](http://hopoogames.com/)
+- [Hopoo Games YouTube](https://www.youtube.com/channel/UChUhe9XnKzeY6sR1TCjhrbw)
 - ~~[playdeadbolt.com](http://playdeadbolt.com/)~~
 
 ## Hopoo Games: Other Games
