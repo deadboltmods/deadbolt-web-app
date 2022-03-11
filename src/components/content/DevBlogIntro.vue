@@ -1,10 +1,12 @@
 <template>
 	<div class="intro-content centered-content">
-		<p>This tool lets you explore the entirety of Hopoo's Tumblr, <a href="https://hopoo.tumblr.com" target="_blank">hopoo.tumblr.com</a>.</p>
-		<p>Their Tumblr contains a huge amount of fascinating information into
-			<br>the background of Deadbolt's lore and its development.</p>
-		<p>However, searching through Tumblr is no easy feat!
-			<br>So this tool allows you to search by keyword.</p>
+		<p>This tool lets you explore the entirety of
+			<br>Hopoo's Tumblr, <a href="https://hopoo.tumblr.com" target="_blank">hopoo.tumblr.com</a>.</p>
+		<p>Their Tumblr contains a huge amount of fascinating
+			<br>information into the background of Deadbolt's lore
+			<br>and its development.</p>
+		<p>However, searching through Tumblr is difficult. So
+			<br>this tool allows you to search by keyword.</p>
 		<br>
 		<p class="color-r">Note: This tool was built out of respect and admiration, and is not intended
 			<br>to infringe on personal rights. Its intended purpose is only to share insights

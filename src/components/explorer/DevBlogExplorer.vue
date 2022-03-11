@@ -66,7 +66,8 @@
 					'zombie',
 					'sprite',
 					'Q&A',
-					'QA'
+					'QA',
+					'necrogame'
 				]
 			}
 		},
