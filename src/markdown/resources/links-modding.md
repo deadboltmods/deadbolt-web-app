@@ -28,4 +28,4 @@ Use this with UMT to export Deadbolt to an project, which you can open with GMS 
 
 ### [Deadbolt-GMS-Issues](https://github.com/ithinkandicode/Deadbolt-GMS-1.4-Misc/issues)
 
-A github repo with some info on running Deadbolt in GMS. The main attraction is the Issues, which will help you fix most of the problems you'll face when trying to run DB in GMS1.4 _(Please don't add issues there, they won't be seen)._
+A github repo with some info on running Deadbolt in GMS. The main attraction is the Issues, which will help you fix most of the problems you'll face when trying to run DB in GMS1.4 _(Please don't add issues there, they won't be seen; use the modding Discord instead)._
