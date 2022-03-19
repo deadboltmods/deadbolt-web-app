@@ -4,10 +4,11 @@
 
 The tool that made modding possible. If you want to mod Deadbolt, this lets you do it.
 
-### [GameMaker Studio 1.4.1749](https://archive.org/download/GMStudio1.4.x/GMStudio-Installer-1.4.1749.exe)
+### [GameMaker Studio 1.4.1749](http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.4.1749.exe)
 
-Download Deadbolt's game engine and correct build version. Links is via [archive.org](https://archive.org/details/GMStudio1.4.x)
+Download Deadbolt's game engine (GMS 1.4) and version (1.4.1479).
 
+If the [official](http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.4.1749.exe) link is dead, you can get it from [archive.org](https://archive.org/details/GMStudio1.4.x) ([direct link](https://archive.org/download/GMStudio1.4.x/GMStudio-Installer-1.4.1749.exe)).
 
 ## Sprite Extraction
 
@@ -18,9 +19,13 @@ Save sprites as single images or strips.
 
 ## Misc
 
-### [GML Documentation](https://web.archive.org/web/20191010010940/https://docs.yoyogames.com/)
+### [GML Docs - Archive.org](https://web.archive.org/web/20191010010940/https://docs.yoyogames.com/)
 
 An archived version of the old GML documentation site. This is where you'll learn how to program in GML, which you'll need to use to mod Deadbolt. If you understand basic programming concepts, most of it will make sense.
+
+### [GML Docs - Rebuild](https://gmsdocs.codemuffin.com/1.4.1749/)
+
+A rebuild of the docs site for 1.4.1749, extracted from the help file (.chm). View the repo [here](https://github.com/deadboltmods/Gamemaker-Docs).
 
 ### [UndertaleModTool-ExportToProjectScript](https://github.com/cubeww/UndertaleModTool-ExportToProjectScript)
 
