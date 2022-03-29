@@ -36,7 +36,7 @@
 			meta: [
 				{
 					name: 'description',
-					content: 'Download and read about DCP & DECP, two huge updates to Hpoo\' 2016 game DEADBOLT',
+					content: 'Massive updates to the 2016 game DEADBOLT and its level editor, with new features and options.'
 				}
 			],
 		},
