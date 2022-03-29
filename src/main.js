@@ -3,10 +3,9 @@ import App from '@/App.vue'
 import router from '@/router'
 import store from '@/store'
 import '@/modules/registerServiceWorker'
-//import meta from '@/modules/meta'
 import VueScrollactive from 'vue-scrollactive';
 import VueGtag from "vue-gtag";
-import titleMixin from './mixins/titleMixin'
+import VueMeta from 'vue-meta'
 
 Vue.config.productionTip = false
 
@@ -17,11 +16,10 @@ Vue.use(VueGtag, {
 
 Vue.use(VueScrollactive);
 
-Vue.mixin(titleMixin)
+Vue.use(VueMeta)
 
 new Vue({
 	router,
 	store,
-	//meta,
 	render: h => h(App)
 }).$mount('#app')

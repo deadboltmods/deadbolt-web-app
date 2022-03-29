@@ -30,8 +30,9 @@ module.exports = {
 		{
 			args[0].title = 'DEADBOLT Mods: DCP + DECP'
 			args[0].description = 'Massive updates to the 2016 game DEADBOLT and its level editor, with new features and options.'
-			args[0].homeUrl = 'https://dcp.codemuffin.com'
-			args[0].ogImagePath = '/img/og-logo-wide.png'
+			args[0].homeUrl = 'https://deadbolt.codemuffin.com'
+			// args[0].ogImagePath = '/img/og-logo-wide.png'
+			args[0].ogImagePath = '/img/og-logo-wide-v2.png'
 			return args
 		});
 	},

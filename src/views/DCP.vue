@@ -23,8 +23,16 @@
 	import MDSetupSaving from '@/markdown/dcp/setup/dcp-setup-saving.md'
 
 	export default {
-		name: 'About',
-		title: 'DCP - Deadbolt Community Patch',
+		name: 'DCP',
+		metaInfo: {
+			title: 'DCP - Deadbolt Community Patch',
+			meta: [
+				{
+					name: 'description',
+					content: 'Download DCP, a massive patch to DEADBOLT. Includes feature overviews and release notes.',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar
 		},

@@ -17,7 +17,15 @@
 
 	export default {
 		name: 'StarsCalc',
-		title: 'Stars Calculator | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Stars Calculator',
+			meta: [
+				{
+					name: 'description',
+					content: 'Calculate your stars, based on your time and shooting %',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

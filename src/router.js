@@ -84,26 +84,14 @@ const routes = [
 		path: '/stars-calculator',
 		name: 'stars-calculator',
 		component: () => import( '@/views/StarsCalc.vue' ),
-		meta: {
-			title: 'Stars Calculator',
-			metaTags: [
-			{
-				name: 'description',
-				content: 'Calculate your stars, based on your time and shooting %'
-			},
-			{
-				property: 'og:description',
-				content: 'Calculate your stars, based on your time and shooting %'
-			}
-			]
-		},
 	},
 ]
 
 const headHeight = 50;
 const yPadding = 0;
 
-export default new VueRouter({
+// export default new VueRouter({
+const router = new VueRouter({
 	mode: 'history',
 	base: process.env.BASE_URL,
 	routes,
@@ -128,4 +116,6 @@ export default new VueRouter({
 			return { x: 0, y: 0 }
 		}
 	}
-})
+});
+
+export default router;

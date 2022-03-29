@@ -15,7 +15,15 @@
 
 	export default {
 		name: 'DevBlog',
-		title: 'DevBlog Explorer - Deadbolt Mods',
+		metaInfo: {
+			title: 'DevBlog Explorer',
+			meta: [
+				{
+					name: 'description',
+					content: 'Read Hopoo\'s Tumblr for insights into DEADBOLT lore and early dev, with filters to search by keyword',
+				},
+			],
+		},
 		components: {
 			ContentWithSidebar
 		},

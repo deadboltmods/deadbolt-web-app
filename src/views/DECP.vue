@@ -14,7 +14,15 @@
 
 	export default {
 		name: 'DECP',
-		title: 'DECP - Deadbolt Editor Community Patch',
+		metaInfo: {
+			title: 'DECP - Deadbolt Editor Community Patch',
+			meta: [
+				{
+					name: 'description',
+					content: 'Download DECP, a patched version of DEADBOLT\'s level editor, with tons of new features...',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

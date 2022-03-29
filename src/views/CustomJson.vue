@@ -23,6 +23,15 @@
 	export default {
 		name: 'CustomJson',
 		title: 'Build custom.json | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Builds custom.json',
+			meta: [
+				{
+					name: 'description',
+					content: 'Builds your custom.json file, which allows you to play as NPCs and more',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar
 		},

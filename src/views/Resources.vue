@@ -12,7 +12,15 @@
 
 	export default {
 		name: 'Resources',
-		title: 'Resources | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Links',
+			meta: [
+				{
+					name: 'description',
+					content: 'A small collection of potentially helpful resources, including a colour pallette',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

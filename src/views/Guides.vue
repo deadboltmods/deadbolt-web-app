@@ -16,7 +16,15 @@
 
 	export default {
 		name: 'Guides',
-		title: 'Guides | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Guides',
+			meta: [
+				{
+					name: 'description',
+					content: 'Guides covering DCP and DECP usage',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

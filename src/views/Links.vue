@@ -14,7 +14,15 @@
 
 	export default {
 		name: 'Links',
-		title: 'Links | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Links',
+			meta: [
+				{
+					name: 'description',
+					content: 'Links to further information related to DEADBOLT and GameMaker modding',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

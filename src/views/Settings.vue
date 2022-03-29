@@ -14,6 +14,15 @@
 	export default {
 		name: 'Settings',
 		title: 'Config Settings | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Settings',
+			meta: [
+				{
+					name: 'description',
+					content: 'Find out what each new setting does in DCP & DECP',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

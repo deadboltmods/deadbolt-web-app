@@ -22,7 +22,15 @@
 
 	export default {
 		name: 'Images',
-		title: 'Images | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'Images',
+			meta: [
+				{
+					name: 'description',
+					content: 'Browse cut content and new sprites',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar,
 		},

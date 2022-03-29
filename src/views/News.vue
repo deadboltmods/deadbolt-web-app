@@ -13,7 +13,15 @@
 
 	export default {
 		name: 'DevBlog',
-		title: 'DevBlog Explorer - Deadbolt Mods',
+		metaInfo: {
+			title: 'Links',
+			meta: [
+				{
+					name: 'description',
+					content: 'Read announcements and updates for DCP, DECP, and this website',
+				}
+			],
+		},
 		components: {
 			ContentWithSidebar
 		},

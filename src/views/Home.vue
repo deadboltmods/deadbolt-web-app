@@ -31,7 +31,15 @@
 <script>
 	export default {
 		name: 'Home',
-		title: 'DCP + DECP | Deadbolt Game Mods',
+		metaInfo: {
+			title: 'DCP + DECP',
+			meta: [
+				{
+					name: 'description',
+					content: 'Download and read about DCP & DECP, two huge updates to Hpoo\' 2016 game DEADBOLT',
+				}
+			],
+		},
 	}
 </script>
 
