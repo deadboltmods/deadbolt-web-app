@@ -85,6 +85,13 @@ const routes = [
 		name: 'stars-calculator',
 		component: () => import( '@/views/StarsCalc.vue' ),
 	},
+
+	// Stars Calculator
+	{
+		path: '/tahazzar/level-design',
+		name: 'tahazzar-level-design',
+		component: () => import( '@/views/DocsTahazzar.vue' ),
+	},
 ]
 
 const headHeight = 50;
