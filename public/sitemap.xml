@@ -49,12 +49,6 @@
 		<priority>0.2</priority>
 	</url>
 	<url>
-		<loc>https://deadbolt.codemuffin.com/resources</loc>
-		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
-		<chagefreq>weekly</chagefreq>
-		<priority>0.2</priority>
-	</url>
-	<url>
 		<loc>https://deadbolt.codemuffin.com/stars-calculator</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
 		<chagefreq>weekly</chagefreq>
