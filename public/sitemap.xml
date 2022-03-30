@@ -3,57 +3,73 @@
 	<url>
 		<loc>https://deadbolt.codemuffin.com/</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>1</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/dcp</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.9</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/decp</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.85</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/config/customjson</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/news</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>daily</chagefreq>
+		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/guides</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://deadbolt.codemuffin.com/settings</loc>
-		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://deadbolt.codemuffin.com/settings</loc>
-		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/images</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/resources</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/resources</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/stars-calculator</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.3</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/devblog-explorer</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.3</priority>
 	</url>
 	<url>
 		<loc>https://deadbolt.codemuffin.com/links</loc>
 		<lastmod>2021-09-28T22:30:05+00:00</lastmod>
+		<chagefreq>weekly</chagefreq>
+		<priority>0.1</priority>
 	</url>
 </urlset>
