@@ -112,6 +112,16 @@
 						hideOnMobile: true,
 					},
 					{
+						name: 'Wallpaper Builder',
+						route: '/config/wallpaper-builder',
+						colorCls: 'color-y',
+						svgIcon: 'material-icons/mi-brush.svg',
+						centerTooltip: false,
+						isNew: false,
+						iconOnly: true,
+						hideOnMobile: true,
+					},
+					{
 						name: 'News & Updates',
 						route: '/news',
 						colorCls: '',

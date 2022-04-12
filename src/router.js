@@ -23,11 +23,18 @@ const routes = [
 		component: () => import( '@/views/DECP.vue' )
 	},
 
-	// Config Apps
+	// Level Config (custom.json)
 	{
 		path: '/config/customjson',
 		name: 'customjson',
 		component: () => import( '@/views/CustomJson.vue' ),
+	},
+
+	// Wallpaper Builder
+	{
+		path: '/config/wallpaper-builder',
+		name: 'wbuilder',
+		component: () => import( '@/views/WallpaperBuilder.vue' ),
 	},
 
 	// Guides
@@ -86,7 +93,7 @@ const routes = [
 		component: () => import( '@/views/StarsCalc.vue' ),
 	},
 
-	// Stars Calculator
+	// Tahazzar's Level Design Doc (test)
 	{
 		path: '/tahazzar/level-design',
 		name: 'tahazzar-level-design',
