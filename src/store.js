@@ -26,6 +26,8 @@ export default new Vuex.Store({
 			wallpaper_showReaperOnHover: true,
 			wallpaper_showReaperAlways: false,
 			wallpaper_useDoubleSizedTiles: false,
+			wallpaper_showTileBG: true,
+			wallpaper_showTileFG: true,
 		},
 	},
 	getters: {

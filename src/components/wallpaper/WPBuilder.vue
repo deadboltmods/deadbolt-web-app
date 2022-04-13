@@ -7,13 +7,13 @@
 					<div class="picker-tile"
 						v-for="( tileNum, tileIndex ) in tilesCount"
 						:key="'tileIndex' + tileIndex"
-						:style="getTileCSSBackgroundColor()"
+						:style="getTilePickerOuterStyles()"
 						@click="setTile( tileIndex )"
 						v-on:mouseover="setTileIfShiftHeld( $event, tileIndex )"
 						>
 
 						<!-- separate, so we can apply BG and filter without conflicts -->
-						<div class="picker-tile__inner" :style="getTileCssBackgroundImage( tileIndex ) + ';' + getCachedTileCSSFilter()" :class="( useDoubleSizedTiles ? 'picker-tile__inner--double-size' : '' )">
+						<div class="picker-tile__inner" :style="getTilePickerInnerStyles( tileIndex )" :class="( useDoubleSizedTiles ? 'picker-tile__inner--double-size' : '' )">
 						</div>
 					</div>
 				</div>
@@ -107,6 +107,15 @@
 			{
 				return this.$store.getters.getSetting( 'wallpaper_useDoubleSizedTiles' );
 			},
+
+			showTileBG()
+			{
+				return this.$store.getters.getSetting( 'wallpaper_showTileBG' );
+			},
+			showTileFG()
+			{
+				return this.$store.getters.getSetting( 'wallpaper_showTileFG' );
+			},
 		},
 		data() {
 			return {
@@ -132,6 +141,7 @@
 
 					// Custom
 					'#000000', // Black
+					'#FFFFFF', // White
 					'#4C3560', // Purple
 					'#194d33', // Green (dark)
 				],
@@ -142,6 +152,7 @@
 					'#525257', '#B1B1B1', '#78665A', '#959386', '#83845D', '#4D5259', '#392620', '#6B674E',
 
 					// Custom
+					'#000000', // Black
 					'#FFFFFF', // White
 					'#59416E', // Purple
 					'#06180f', // Green (dark)
@@ -213,6 +224,19 @@
 				return bgStyle + '; ' + filterStyle;
 			},
 
+			getTilePickerOuterStyles()
+			{
+				return ( this.showTileBG ) ? this.getTileCSSBackgroundColor() : 'background-color: rgba(255,255,255, 1)';
+			},
+
+			getTilePickerInnerStyles( tileIndex = this.currentTile )
+			{
+				const bgStyle     = this.getTileCssBackgroundImage( tileIndex );
+				const filterStyle = ( this.showTileFG ) ? this.getCachedTileCSSFilter() : this.getWhiteToBlackCssFilter( true );
+
+				return bgStyle + '; ' + filterStyle;
+			},
+
 
 			// Get CSS
 			// ------------------------------------------------------------------------
@@ -230,6 +254,13 @@
 				return `background-color: ${this.colorsBG.hex}`;
 			},
 
+			getWhiteToBlackCssFilter( addPrefix = false )
+			{
+				const prefix = ( addPrefix ) ? 'filter: ' : '';
+
+				return prefix + 'brightness(0) saturate(100%)';
+			},
+
 			getTileCSSFilter()
 			{
 				// this.colorsBG.hex
@@ -245,7 +276,8 @@
 				// Convert white sprites to black.
 				// We're using white sprites because that's how GameMaker uses
 				// them (for using `alpha_blend`)
-				const filterWhiteToBlack = 'brightness(0) saturate(100%)';
+				// const filterWhiteToBlack = 'brightness(0) saturate(100%)';
+				const filterWhiteToBlack = this.getWhiteToBlackCssFilter();
 
 				// Re-add the "filter:" part
 				filterStyle = 'filter: ' + filterWhiteToBlack + ' ' + filterStyle;

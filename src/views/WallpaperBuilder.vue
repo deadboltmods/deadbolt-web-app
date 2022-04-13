@@ -60,10 +60,15 @@
 				},
 
 				settings: {
-					'Settings': [
+					'Show Reaper?': [
 						'wallpaper_showReaperOnHover',
 						'wallpaper_showReaperAlways',
+					],
+
+					'Tile Picker': [
 						'wallpaper_useDoubleSizedTiles',
+						'wallpaper_showTileBG',
+						'wallpaper_showTileFG',
 					]
 				}
 			}

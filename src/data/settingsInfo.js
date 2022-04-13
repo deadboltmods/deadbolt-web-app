@@ -45,18 +45,28 @@ export default {
 	// Wallpaper Builder
 	wallpaper_showReaperOnHover: {
 		type: 'checkbox',
-		description: 'Reaper (Hover)',
+		description: 'Hover',
 		hoverInfo: 'Show Reaper\'s sprite when hovering wallpaper',
 	},
 	wallpaper_showReaperAlways: {
 		type: 'checkbox',
-		description: 'Reaper (Always)',
+		description: 'Always',
 		hoverInfo: 'Always show Reaper\'s sprite when hovering wallpaper',
 	},
 	wallpaper_useDoubleSizedTiles: {
 		type: 'checkbox',
-		description: '2x Tile Size',
+		description: '2x Size',
 		hoverInfo: 'Makes tiles larger, so they match the preview',
+	},
+	wallpaper_showTileBG: {
+		type: 'checkbox',
+		description: 'Use BG',
+		hoverInfo: 'Apply the background color to the tiles on the left',
+	},
+	wallpaper_showTileFG: {
+		type: 'checkbox',
+		description: 'Use Foreground',
+		hoverInfo: 'Apply the foreground color to the tiles on the left',
 	},
 
 }

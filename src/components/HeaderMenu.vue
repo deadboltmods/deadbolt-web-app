@@ -111,6 +111,9 @@
 						iconOnly: true,
 						hideOnMobile: true,
 					},
+
+					/*
+					//@TODO:WALLPAPER_BUILDER
 					{
 						name: 'Wallpaper Builder',
 						route: '/config/wallpaper-builder',
@@ -121,6 +124,8 @@
 						iconOnly: true,
 						hideOnMobile: true,
 					},
+					*/
+
 					{
 						name: 'News & Updates',
 						route: '/news',
