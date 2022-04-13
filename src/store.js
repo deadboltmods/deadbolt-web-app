@@ -21,6 +21,11 @@ export default new Vuex.Store({
 			// Calculator
 			showCalculatorWarnings: true,
 			showCalculatorDebug: false,
+
+			// Wallpaper
+			wallpaper_showReaperOnHover: true,
+			wallpaper_showReaperAlways: false,
+			wallpaper_useDoubleSizedTiles: false,
 		},
 	},
 	getters: {

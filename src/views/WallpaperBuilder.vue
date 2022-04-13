@@ -1,12 +1,17 @@
 <template>
 	<div>
-		<ContentWithSidebar :sections="sections" :groupKeys="groupKeys"/>
+		<ContentWithSidebar
+			:sections="sections"
+			:groupKeys="groupKeys"
+			:settings="settings"/>
+			/>
 	</div>
 </template>
 
 <script>
 	import ContentWithSidebar from '@/components/ContentWithSidebar'
-	import WBuilder from '@/components/wallpaper-builder/WBuilder'
+	import WPBuilder from '@/components/wallpaper/WPBuilder'
+	import WPViewer from '@/components/wallpaper/WPViewer'
 
 	export default {
 		name: 'WallpaperBuilder',
@@ -31,18 +36,35 @@
 						specialHeading: true,
 					},
 					{
-						name: 'Wallpaper Builder',
-						anchor: 'wbuilder',
-						component: WBuilder,
-						groupKey: 'builder',
+						name: 'Builder',
+						anchor: 'wp-builder',
+						component: WPBuilder,
+						groupKey: 'wallpaper',
 						useStyledContentClass: true,
 						fullwidth: true,
-						hidePageHeading: true,
+						// hidePageHeading: true,
+					},
+					{
+						name: 'Viewer',
+						anchor: 'wp-viewer',
+						component: WPViewer,
+						groupKey: 'wallpaper',
+						useStyledContentClass: true,
+						fullwidth: true,
+						// hidePageHeading: true,
 					},
 				],
 				groupKeys:
 				{
-					builder: 'Builder',
+					wallpaper: 'Wallpaper',
+				},
+
+				settings: {
+					'Settings': [
+						'wallpaper_showReaperOnHover',
+						'wallpaper_showReaperAlways',
+						'wallpaper_useDoubleSizedTiles',
+					]
 				}
 			}
 		},

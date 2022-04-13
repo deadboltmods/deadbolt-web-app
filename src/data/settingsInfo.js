@@ -42,4 +42,21 @@ export default {
 		hoverInfo: 'Show extra debug info',
 	},
 
+	// Wallpaper Builder
+	wallpaper_showReaperOnHover: {
+		type: 'checkbox',
+		description: 'Reaper (Hover)',
+		hoverInfo: 'Show Reaper\'s sprite when hovering wallpaper',
+	},
+	wallpaper_showReaperAlways: {
+		type: 'checkbox',
+		description: 'Reaper (Always)',
+		hoverInfo: 'Always show Reaper\'s sprite when hovering wallpaper',
+	},
+	wallpaper_useDoubleSizedTiles: {
+		type: 'checkbox',
+		description: '2x Tile Size',
+		hoverInfo: 'Makes tiles larger, so they match the preview',
+	},
+
 }

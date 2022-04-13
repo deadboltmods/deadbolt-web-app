@@ -243,9 +243,9 @@
 
 		// &--left {}
 
-		&--right {
+		// &--right {
 			// width: 180px;
-		}
+		// }
 	}
 
 	.tab-btn {
