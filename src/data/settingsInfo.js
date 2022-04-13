@@ -69,4 +69,11 @@ export default {
 		hoverInfo: 'Apply the foreground color to the tiles on the left',
 	},
 
+	// Site Settings
+	site_showWIP: {
+		type: 'checkbox',
+		description: 'Preview WIP',
+		hoverInfo: 'Show website content and features that are currently in active development',
+	},
+
 }

@@ -47,7 +47,8 @@
 					:id="section.anchor"
 					:data-anchor-observed="section.anchor"
 					class="content-section"
-					:class="{ 'content-section--special-heading' : section.specialHeading }">
+					:class="{ 'content-section--special-heading' : section.specialHeading }"
+					>
 
 					<article class="content-section-inner" :class="{ 'content-section-inner--fullwidth' : section.fullwidth }">
 						<h2 class="content-section-title centered-content" v-if="!section.hidePageHeading">

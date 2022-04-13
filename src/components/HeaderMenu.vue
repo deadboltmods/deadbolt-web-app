@@ -15,7 +15,7 @@
 			<li><router-link class="tab-btn color-teal" to="/decp">DECP</router-link></li>
 
 			<!-- Desktop Only -->
-			<li v-for="(link, linkIndex) in mainLinks" :key="'mainlink' + linkIndex" :class="link.hideOnMobile ? 'bp-wide-only' : ''">
+			<li v-for="(link, linkIndex) in getFilteredMainLinks()" :key="'mainlink' + linkIndex" :class="link.hideOnMobile ? 'bp-wide-only' : ''">
 				<router-link class="tab-btn" :class="link.colorCls" :to="link.route">
 					<div class="bp-hide-below-medium" v-if="!link.iconOnly">
 						{{ link.name }}
@@ -30,6 +30,7 @@
 			</li>
 
 			<!-- Mobile Menu -->
+			<!-- @TODO: Use the mainkLinks -->
 			<li class="tab-parent bp-narrow-only">
 				<span class="tab-btn" to="#">...</span>
 				<ul class="tab-submenu tab-submenu--align-right">
@@ -97,6 +98,12 @@
 
 	export default {
 		name: 'HeaderMenu',
+		computed: {
+			showWIP()
+			{
+				return this.$store.getters.getSetting( 'site_showWIP' );
+			}
+		},
 		data() {
 			return {
 				websiteUrls: websiteUrls,
@@ -110,9 +117,9 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 
-					/*
 					//@TODO:WALLPAPER_BUILDER
 					{
 						name: 'Wallpaper Builder',
@@ -123,8 +130,8 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: true,
 					},
-					*/
 
 					{
 						name: 'News & Updates',
@@ -136,6 +143,7 @@
 						isNew: true,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'Guides',
@@ -146,6 +154,7 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'JSON Settings',
@@ -156,6 +165,7 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'Images',
@@ -166,6 +176,7 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'Resources',
@@ -176,27 +187,30 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'Stars Calculator',
 						route: '/stars-calculator',
-						colorCls: '',
+						colorCls: 'color-y',
 						svgIcon: 'material-icons/mi-star.svg',
 						centerTooltip: true,
 						isNew: false,
 						// isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'Dev Blog Explorer',
 						route: '/devblog-explorer',
-						colorCls: '',
+						colorCls: 'color-y',
 						svgIcon: 'material-icons/mi-question-answer.svg',
 						centerTooltip: false,
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 					{
 						name: 'Links',
@@ -207,8 +221,26 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
+						isWIP: false,
 					},
 				],
+			}
+		},
+		methods: {
+			// Gets the links, excluding any WIP items (if showWIP is not enabled)
+			getFilteredMainLinks()
+			{
+				return this.mainLinks.filter( link =>
+				{
+					if ( !this.showWIP )
+					{
+						return !link.isWIP;
+					}
+					else
+					{
+						return true;
+					}
+				});
 			}
 		},
 		components: {

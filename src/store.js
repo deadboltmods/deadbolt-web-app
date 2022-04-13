@@ -28,6 +28,9 @@ export default new Vuex.Store({
 			wallpaper_useDoubleSizedTiles: false,
 			wallpaper_showTileBG: true,
 			wallpaper_showTileFG: true,
+
+			// Site
+			site_showWIP: false,
 		},
 	},
 	getters: {

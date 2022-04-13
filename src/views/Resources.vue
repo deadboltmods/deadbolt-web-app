@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<ContentWithSidebar :sections="sections" :groupKeys="groupKeys"/>
+		<ContentWithSidebar
+			:sections="sections"
+			:groupKeys="groupKeys"
+			:settings="settings"
+			/>
 	</div>
 </template>
 
@@ -56,7 +60,14 @@
 				{
 					resources: 'Resources',
 					misc: 'Misc',
-				}
+				},
+
+				settings: {
+					'Previews': [
+						'site_showWIP'
+					]
+				},
+
 			}
 		},
 	}
