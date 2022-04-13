@@ -26,7 +26,7 @@
 			return {
 				sections: [
 					{
-						name: 'Builder1',
+						name: 'Wallpaper Builder',
 						hideFromSidebar: true,
 						specialHeading: true,
 					},
@@ -37,6 +37,7 @@
 						groupKey: 'builder',
 						useStyledContentClass: true,
 						fullwidth: true,
+						hidePageHeading: true,
 					},
 				],
 				groupKeys:

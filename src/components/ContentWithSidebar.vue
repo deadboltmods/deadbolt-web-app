@@ -50,7 +50,9 @@
 					:class="{ 'content-section--special-heading' : section.specialHeading }">
 
 					<article class="content-section-inner" :class="{ 'content-section-inner--fullwidth' : section.fullwidth }">
-						<h2 class="content-section-title centered-content">{{ section.name }}</h2>
+						<h2 class="content-section-title centered-content" v-if="!section.hidePageHeading">
+							{{ section.name }}
+						</h2>
 						<div class="intro centered-content" v-if="section.intro">
 							<span v-html="section.intro"></span>
 						</div>
