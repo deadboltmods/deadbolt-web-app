@@ -34,19 +34,19 @@
 
 				<div class="controls">
 					<div class="form-row">
-						<label>Tile Number (0 - 239)</label>
-						<input v-model.number="currentTile" type="number" min="0" :max="tilesCount-1">
+						<label id="input-tilenum">Tile Number (0 - 239)</label>
+						<input v-model.number="currentTile" type="number" min="0" :max="tilesCount-1" id="input-tilenum">
 						<!-- <div class="helptext">UP/DOWN</div> -->
 					</div>
 
 					<div class="form-row">
 						<label for="input-hexbg">Hex: Background</label>
-						<input v-model="colorsBG.hex" id="input-hexbg">
+						<input v-model="colorsBG.hex" id="input-hexbg" @input="forceUpdatePicker()">
 					</div>
 
 					<div class="form-row">
-						<label>Hex: Foreground</label>
-						<input v-model="colorsFG.hex">
+						<label for="input-hexfg">Hex: Foreground</label>
+						<input v-model="colorsFG.hex" id="input-hexfg" @input="forceUpdatePicker()">
 					</div>
 
 					<div class="form-row">
@@ -77,6 +77,10 @@
 			</div>
 		</div>
 
+		<div>
+			{{ defaultColors() }}
+		</div>
+
 	</div>
 </template>
 
@@ -84,6 +88,7 @@
 <script>
 	import hexToCssFilter from '@/mixins/hexToCssFilter.js'; // https://codepen.io/sosuke/pen/Pjoqqp
 	import { Sketch, Slider } from 'vue-color' // https://github.com/xiaokaike/vue-color + http://vue-color.surge.sh/
+	import material from 'material-colors'
 
 	export default {
 		name: 'WPBuilder',
@@ -94,6 +99,19 @@
 			'slider-picker-front': Slider,
 			'slider-picker-back':  Slider,
 		},
+
+		mounted()
+		{
+			console.log(this.defaultColors());
+
+			const flatDefaultColors = this.defaultColors().flat();
+
+			console.log(flatDefaultColors);
+
+			this.paletteBG.push( ...flatDefaultColors );
+			this.paletteFG.push( ...flatDefaultColors );
+		},
+
 		computed: {
 			showReaperOnHover()
 			{
@@ -117,6 +135,7 @@
 				return this.$store.getters.getSetting( 'wallpaper_showTileFG' );
 			},
 		},
+
 		data() {
 			return {
 				tilesCount: 240, // note: they're named from 0-239 (eg. "tile000.png")
@@ -139,11 +158,18 @@
 					'#4A5243', '#546678', '#525245', '#56473F', '#5A5A65', '#67594B', '#131317', '#4F3B35',
 					'#45454A', '#A1A1A1', '#66574D', '#8C8A7E', '#737451', '#3F4349', '#321D1D', '#55523E',
 
+					// Black/White/Greys
+					'#000000', '#FFFFFF', '#303030', '#484848', '#606060', '#787878', '#909090', '#A8A8A8',
+
+					// Custom (DB Palette)
+					'#603030', '#783030', '#481818', '#601818', '#781818', '#901818', '#A81818', '#F03030', // DB Red
+					'#181800', '#303000', '#484800', '#789030', '#607830', '#486018', '#486030', '#304818', // DB Green
+
+
+
 					// Custom
-					'#000000', // Black
-					'#FFFFFF', // White
-					'#4C3560', // Purple
-					'#194d33', // Green (dark)
+					// '#4C3560', // Purple
+					// '#194d33', // Green (dark)
 				],
 
 				paletteFG: [
@@ -151,15 +177,75 @@
 					'#606552', '#63738F', '#616052', '#6C5C4D', '#706978', '#776757', '#18181D', '#62423C',
 					'#525257', '#B1B1B1', '#78665A', '#959386', '#83845D', '#4D5259', '#392620', '#6B674E',
 
+					// Black/White/Greys
+					'#000000', '#FFFFFF', '#303030', '#484848', '#606060', '#787878', '#909090', '#A8A8A8',
+
 					// Custom
-					'#000000', // Black
-					'#FFFFFF', // White
-					'#59416E', // Purple
-					'#06180f', // Green (dark)
+					// '#59416E', // Purple
+					// '#06180f', // Green (dark)
 				],
+
+
+
+				// via:
+				// https://github.com/xiaokaike/vue-color/blob/master/src/components/Swatches.vue
+
+				colorMap: [
+					'red',
+					'pink',
+					'purple',
+					'deepPurple',
+					'indigo',
+					'blue',
+					'lightBlue',
+					'cyan',
+					'teal',
+					'green',
+					'lightGreen',
+					'lime',
+					'yellow',
+					'amber',
+					'orange',
+					'deepOrange',
+					'brown',
+					'blueGrey',
+					'grey'
+					// 'black'
+				],
+
+				// colorLevel: ['900', '700', '500', '300', '100'],
+				colorLevel: ['900', '800', '700', '600', '500', '400', '300', '100'],
+
+
+
 			}
 		},
 		methods: {
+
+			defaultColors()
+			{
+				var colors = [];
+
+				this.colorMap.forEach((type) => {
+					var typeColor = [];
+
+					if (type.toLowerCase() === 'black' || type.toLowerCase() === 'white')
+					{
+						typeColor = typeColor.concat(['#000000', '#FFFFFF'])
+					}
+					else
+					{
+						this.colorLevel.forEach((level) => {
+							const color = material[type][level]
+							typeColor.push(color.toUpperCase())
+						});
+					}
+
+					colors.push(typeColor);
+				});
+
+				return colors;
+			},
 
 			// Update Values
 			// ------------------------------------------------------------------------
@@ -189,6 +275,14 @@
 
 				this.colorsBG.hex = currHexFG;
 				this.colorsFG.hex = currHexBG;
+
+				this.forceUpdatePicker();
+			},
+
+			forceUpdatePicker()
+			{
+				this.colorsBG = { hex: this.colorsBG.hex };
+				this.colorsFG = { hex: this.colorsFG.hex };
 
 				this.updateCSSFilter();
 			},

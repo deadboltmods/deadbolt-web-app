@@ -17,11 +17,11 @@
 	export default {
 		name: 'Resources',
 		metaInfo: {
-			title: 'Links',
+			title: 'Resources',
 			meta: [
 				{
 					name: 'description',
-					content: 'A small collection of potentially helpful resources, including a colour pallette',
+					content: 'A small collection of resources, including a colour pallette',
 				}
 			],
 		},

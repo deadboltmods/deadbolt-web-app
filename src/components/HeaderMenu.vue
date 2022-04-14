@@ -120,7 +120,6 @@
 						isWIP: false,
 					},
 
-					//@TODO:WALLPAPER_BUILDER
 					{
 						name: 'Wallpaper Builder',
 						route: '/config/wallpaper-builder',
@@ -130,7 +129,7 @@
 						isNew: false,
 						iconOnly: true,
 						hideOnMobile: true,
-						isWIP: true,
+						isWIP: false, //@TODO:WALLPAPER_BUILDER
 					},
 
 					{
